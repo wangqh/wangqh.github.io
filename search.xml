@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[css 强制换行及强制不换行]]></title>
+      <url>http://chanh.site/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/</url>
+      <content type="html"><![CDATA[<p>默认情况下，元素都有默认的 CSS 属性 white-space:normal（自动换行；ps: 不换行是 nowrap），当内容文字超过所定宽度时会自动换行；但如果其内的文字是堆没有空格的字符（正常情况不会出现这样的字符，但有些BT的测试人员就喜欢这样！），就会溢出容器或者把容器撑大，只有遇到空格时才换行。<br><a id="more"></a></p>
+<h2 id="常见解决方案"><a href="#常见解决方案" class="headerlink" title="常见解决方案"></a>常见解决方案</h2><p>主要分两种情况，一是允许切断单词（暴力）换行<code>word-break</code>，二是以单词（单词超过一行时自动换行）为单位换行<code>word-wrap</code>。以IE，Chrome，FF为测试浏览器。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">word-break</span>: break-all; <span class="comment">/* 支持IE，Chrome，低版FF不支持 */</span></span><br><span class="line">  <span class="attribute">word-wrap</span>: break-word; <span class="comment">/* 支持IE，Chrome，FF */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p><code>word-break:break-all</code> 例如：div宽200px，它的内容就会到200px自动换行，如果该行末端有个英文单词很长（congratulation等），它会把单词截断，变成该行末端为congra(congratulation的前端部分)，下一行为tulation（conguatulation的后端部分）了。<br><code>word-break:break-all</code> 支持版本：IE5以上 该行为与亚洲语言的 normal 相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本。</p>
+<blockquote>
+<p><strong>语法：</strong> word-break : normal | break-all | keep-all<br> <strong>参数：</strong> normal : 依照亚洲语言和非亚洲语言的文本规则，允许在字内换行<br> 　　　break-all : 该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本<br> 　　　keep-all : 与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本</p>
+</blockquote>
+</li>
+<li><p><code>word-wrap:break-word</code> 例子与上面一样，但区别就是它会把congratulation整个单词看成一个整体，如果该行末端宽度不够显示整个单词，它会自动把整个单词放到下一行，而不会把单词截断掉的。<br><code>word-wrap:break-word</code> 支持版本：IE5.5以上 内容将在边界内换行。如果需要，词内换行( word-break )也将发生。</p>
+<blockquote>
+<p><strong>语法：</strong> word-wrap : normal | break-word<br> <strong>参数：</strong> normal : 允许内容顶开指定的容器边界<br> 　　　 break-word : 内容将在边界内换行。如果需要，词内换行用（word-break）也能实现。</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>目前 firefox 较新版的浏览器也支持<code>word-break</code> 属性了，所以用一个属性就能搞定所有常用浏览器了，如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">word-break</span>: break-all; <span class="comment">/* 强制换行任意字符，支持IE，Chrome，FF */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>另：</strong> 强制不换行，结束显示省略号<code>...</code>，代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap; <span class="comment">/* 强制不换行 */</span></span><br><span class="line">  <span class="attribute">text-overflow</span>:ellipsis; <span class="comment">/* 溢出部分用省略号代替，IE低版本无省略号 */</span></span><br><span class="line">  <span class="attribute">overflow</span>:hidden; <span class="comment">/* 必须设置，否则无省略号 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目]]></title>
+      <url>http://chanh.site/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+      <content type="html"><![CDATA[<p>此项目基于 <a href="https://github.com/gulpjs/gulp" target="_blank" rel="external">gulp</a>, <a href="https://github.com/less/" target="_blank" rel="external">less</a> 和 <a href="https://github.com/webpack/webpack" target="_blank" rel="external">webpack</a>构建. View 层用 <a href="https://github.com/facebook/react" target="_blank" rel="external">React</a> 实现, 内部数据流使用  <a href="https://github.com/spoike/refluxjs" target="_blank" rel="external">Reflux</a>架构； 路由管理使用 <a href="https://github.com/rackt/react-router" target="_blank" rel="external">React-Router</a>.<br><a id="more"></a></p>
+<h2 id="Reflux-架构"><a href="#Reflux-架构" class="headerlink" title="Reflux 架构"></a>Reflux 架构</h2><p>一个单向数据流架构，其中包含三个重要组成部分：Actions, Stores, Components (View)<br>详细参考第三方<a href="https://segmentfault.com/a/1190000002793786" target="_blank" rel="external">中文版API</a><br><img src="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/reflux.png" alt="[Reflux架构]" title="[Reflux架构]"></p>
+<h2 id="项目文件目录"><a href="#项目文件目录" class="headerlink" title="项目文件目录"></a>项目文件目录</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── dist    <span class="comment">// build目录</span></span><br><span class="line">│  ├── css</span><br><span class="line">│  ├── fonts</span><br><span class="line">│  ├── js</span><br><span class="line">│  └── index<span class="selector-class">.html</span></span><br><span class="line">└── src     <span class="comment">// 源文件目录</span></span><br><span class="line">    ├── images    <span class="comment">// 图片目录</span></span><br><span class="line">    ├── less    <span class="comment">// less 文件目录</span></span><br><span class="line">    ├── scripts     <span class="comment">// js 源码</span></span><br><span class="line">    │   ├── app     <span class="comment">// 与 routes 对应的 smart components （智能组件）</span></span><br><span class="line">    │   │   ├── activity    <span class="comment">// 活动页面的 actions stores view</span></span><br><span class="line">    │   │   │   ├── api     <span class="comment">// ajax 请求</span></span><br><span class="line">    │   │   │   ├── components    <span class="comment">// 活动相关组件 view</span></span><br><span class="line">    │   │   │   ├── stores    <span class="comment">// 活动页面的数据模型层</span></span><br><span class="line">    │   │   │   └── actions<span class="selector-class">.js</span>    <span class="comment">// 活动页面的动作交互</span></span><br><span class="line">    │   │   ├── error     <span class="comment">// 404, 403 UI</span></span><br><span class="line">    │   │   ├── event     <span class="comment">// 事件页面的 actions stores view （与活动类同）</span></span><br><span class="line">    │   │   ├── login     <span class="comment">// 登录页面UI</span></span><br><span class="line">    │   │   └── app<span class="selector-class">.jsx</span>     <span class="comment">// layout UI</span></span><br><span class="line">    │   ├── components    <span class="comment">// 通用木偶(Dumb)组件</span></span><br><span class="line">    │   ├── utils     <span class="comment">// auth 服务，常用工具类</span></span><br><span class="line">    │   ├── config<span class="selector-class">.js</span>     <span class="comment">// 常量配置</span></span><br><span class="line">    │   ├── main<span class="selector-class">.js</span>     <span class="comment">// 把 router 组件绑定到 html</span></span><br><span class="line">    │   └── routes<span class="selector-class">.js</span>     <span class="comment">// 路由配置</span></span><br><span class="line">    └── index.html</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>智能(smart)组件：含有状态(state)控制的组件。<br>木偶(Dumb)组件：没有状态(state)控制的展示组件，通常是可复用的部分。</p>
+</blockquote>
+<h2 id="React-Router-路由配置"><a href="#React-Router-路由配置" class="headerlink" title="React Router 路由配置"></a>React Router 路由配置</h2><p>路由通常是一个单页应用的核心，用来控制不同视图间切换。监听 location 中 hash 的变化来实现不同 components 的展视。<br>此应用的 URLs 与 components 对照：<br>URL                               | Components<br>———————————-|———–<br><code>/</code>                               | <code>App</code><br><code>/activity</code>                       | <code>App -&gt; ActivityManage</code><br><code>/activity/add</code>                   | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/edit</code>      | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/unit/add</code>  | <code>App -&gt; UnitAdd</code><br><code>/activity/unit/:unitId/edit</code>     | <code>App -&gt; UnitAdd</code><br><code>/activity/:id/detail</code>            | <code>App -&gt; ActivityDetail</code><br><code>/activity/unit/:id/detail</code>       | <code>App -&gt; UnitDetail</code><br><code>/event</code>                          | <code>App -&gt; EventManage</code><br><code>/accessdenied</code>                   | <code>App -&gt; AccessDenied</code><br><code>/*</code>                              | <code>App -&gt; NotFound</code></p>
+<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># src/scripts/routes.js</span><br><span class="line"></span><br><span class="line">import &#123; Router, Route, IndexRoute, IndexRedirect, useRouterHistory, hashHistory &#125; from 'react-router';</span><br><span class="line">import &#123; createHashHistory &#125; from 'history'</span><br><span class="line"></span><br><span class="line">const appHistory = useRouterHistory(createHashHistory)(&#123; queryKey: true &#125;);</span><br><span class="line"></span><br><span class="line">const routes = (</span><br><span class="line">  &lt;Router history=&#123;appHistory&#125;&gt;</span><br><span class="line">    &lt;Route path='/' component=&#123; App &#125; onEnter=&#123;onEnterApp&#125;&gt;</span><br><span class="line">      &lt;IndexRedirect to="activity" /&gt;</span><br><span class="line">      &lt;Route path='activity' component=&#123; ActivityManage &#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; &gt;</span><br><span class="line">        &lt;Route path='add' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">        &lt;Route path=':activityId/edit' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">      &lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:activityId/unit/add" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:unitId/edit" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:id/detail" component=&#123;ActivityDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:id/detail" component=&#123;UnitDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path='event' component=&#123; EventManage &#125; onEnter=&#123;requireAuth.bind(this, roles.event)&#125; /&gt;</span><br><span class="line">      &lt;Route path='accessdenied' component=&#123;AccessDenied&#125;/&gt;</span><br><span class="line">      &lt;Route path='*' component=&#123;NotFound&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">  &lt;/Router&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">function onEnterApp(nextState, replace, callback) &#123;</span><br><span class="line">  auth.authorize(null, callback);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function requireAuth(roles, nextState, replace, callback) &#123;</span><br><span class="line">  if(Principal.isIdentityResolved())&#123;</span><br><span class="line">    auth.authorize(roles, callback)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default routes;</span><br></pre></td></tr></table></figure>
+<h3 id="Router-的-history-属性"><a href="#Router-的-history-属性" class="headerlink" title="Router 的 history 属性"></a>Router 的 history 属性</h3><p>React Router 是基于history的。所以 history 是 Router 组件上主要的属性。这里的 History 有三种类型 browserHistory, hashHistory, createMemoryHistory。先简单介绍下这三种类型：</p>
+<ul>
+<li><strong>browserHistory:</strong> 它利用 HTML5 History API 去操纵浏览器的 URL， 并创建真正的 URLs，如：<code>example.com/some/path</code>。同时需要后端程序的配合，把所有前端routes请求都响应index.html。常用在现代浏览器中，IE9及以下体验不好，会刷新整个页面。</li>
+<li><strong>hashHistory:</strong> 它利用URL中的hash(#)值来实现视图的切换。如：<code>example.com/#/some/path</code>。这种方式不需要后端做任何操作，同时能兼容低版的浏览器。此项目选用的就是这种类型。</li>
+<li><strong>createMemoryHistory:</strong> 此类型不能读写浏览器的地址栏URL。常被用在服务端渲染，也可用于测试和其它环境（如：React Native）.它和上面两种有点小区别，就是必须要先创建才能使用，这样也有助于测试。 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> history = createMemoryHistory(location)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong>此项目中其实可以在 history 属性中直接引用 hashHistory 的，之所以用当前的方式，是因为参数 <code>{ queryKey: true}</code> 这个参数是个坑，后面详说。<br><strong>queryKey:</strong> 它用来控制地址栏中是否显示<code>?_k=12l0vf</code>这种随机生成的字符参数；它的作用是用来记录路由切换时的 state 数据；如果此值为<code>false</code>就不会显示这个串，但也不能接收到上个视图的数据。<br>当时强迫症使然，觉得这个串太碍眼，觉得没啥大用，所以就查了API把<code>queryKey: false</code>了，结果是我的眼睛爽了，但出现了 Bug，调试了好久。。。才发现是因为这个设置导致不能接收到 <code>location.state</code>，后来就把这个参数置为 <code>true</code>了，等价于使用 <code>hashHistory</code>。</p>
+</blockquote>
+<h3 id="Route-组件的属性"><a href="#Route-组件的属性" class="headerlink" title="Route 组件的属性"></a>Route 组件的属性</h3><ul>
+<li><strong>path:</strong> 此属性设置路由的 URL，与父级拼接形成绝对路径，如：<code>/activity/:activityId/edit</code></li>
+<li><strong>component:</strong> 此属性设置对应的组件（component）,也就是此路由对应的视图（view）</li>
+<li><strong>onEnter:</strong> 此属性绑定一个路由进入之前的事件回调函数，它有三个参数 nextState, replace, callback. 具体含义不再赘述，参阅官方API；其中第三个参数 callback 如果传入，代表是异步完成，否则是同步。</li>
+</ul>
+<p>此项目的主页面逻辑较为复杂，个人感觉用 Reflux 搞的有点乱，最近在学习 <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a> 架构，打算有时间重构一下。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[设置 GitHub SSH Keys]]></title>
+      <url>http://chanh.site/2016/06/01/settingsSSHKeysOfGitHub/</url>
+      <content type="html"><![CDATA[<p>让本地git项目与远程的github建立联系，需要设置SSH keys。<br><a id="more"></a></p>
+<h2 id="检查-SSH-keys-的设置"><a href="#检查-SSH-keys-的设置" class="headerlink" title="检查 SSH keys 的设置"></a>检查 SSH keys 的设置</h2><p>首先我们需要检查电脑上现有的 ssh key:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh <span class="comment">#检查本机的ssh密钥</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果提示：No such file or directory 说你机器上存在旧的 SSH key</p>
+</blockquote>
+<h2 id="生成新的-SSH-Key"><a href="#生成新的-SSH-Key" class="headerlink" title="生成新的 SSH Key:"></a>生成新的 SSH Key:</h2><p>首先用 ssh-keygen 生成一个密钥</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;邮箱名@youremail.com&quot;
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就行&gt;
+</code></pre><blockquote>
+<p>注意：此处的 <code>-C</code> 的是大写的 <code>C</code></p>
+</blockquote>
+<p>然后会提示输入密码</p>
+<pre><code>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;
+Enter same passphrase again:&lt;输入密码&gt;
+</code></pre><blockquote>
+<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br><strong>注意：</strong>输入密码的时候没有*字样的，你直接输入就可以了。</p>
+</blockquote>
+<p>最后看到这样的界面，就成功设置 ssh key 了</p>
+<pre><code>Your identification has been saved in
+/Users/your_user_directory/.ssh/id_rsa.
+Your public key has been saved in
+/Users/your_user_directory/.ssh/id_rsa.pub.
+The key fingerprint is: f3:ee:40:05:56:ab:fa:ac:14:72:8b:a2:44:ed:75:04 user_name@email.com
+</code></pre><h2 id="添加-SSH-key-到-ssh-agent"><a href="#添加-SSH-key-到-ssh-agent" class="headerlink" title="添加 SSH key 到 ssh-agent"></a>添加 SSH key 到 ssh-agent</h2><p>如果检测到本机存在 ssh key， 就要重新生成一个 SSH key, 添加到 ssh-agent</p>
+<ol>
+<li><p>确保 ssh-agent 是启动的</p>
+<pre><code>#启动 ssh-agent
+$ eval &quot;$(ssh-agent -s)&quot;
+Agent pid 59566
+</code></pre><blockquote>
+<p>上面是 Git Bash 的格式，如果用其它 terminal 工具，去掉 <code>&quot;&quot;</code> 即可</p>
+</blockquote>
+</li>
+<li><p>添加 SSH key</p>
+<pre><code>$ ssh-add ~/.ssh/id_rsa
+</code></pre></li>
+</ol>
+<h2 id="添加-SSH-Key-到-GitHub-账号"><a href="#添加-SSH-Key-到-GitHub-账号" class="headerlink" title="添加 SSH Key 到 GitHub 账号"></a>添加 SSH Key 到 GitHub 账号</h2><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH连接接的设置。</p>
+<ol>
+<li>打开本地 C:\Documents and Settings\your_user_directory.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统。点击右上角的 Settings ??&gt; SSH and GPG keys ??&gt; New SSH key</li>
+<li>把你本地生成的密钥复制到里面（key文本框中），Title 可写中文标题，以区分其它绑定的机器， 点击 add SSH key 就 ok 了</li>
+</ol>
+<h2 id="测试-SSH-连接"><a href="#测试-SSH-连接" class="headerlink" title="测试 SSH 连接"></a>测试 SSH 连接</h2><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<pre><code>$ ssh -T git@github.com
+</code></pre><p>如果是下面的反馈：</p>
+<pre><code>The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre><p>不要紧张，输入yes就好，然后会看到：</p>
+<pre><code>Hi chanh! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>如果出现如下错误：</p>
+<pre><code>Error: Permission denied (publickey).
+</code></pre><blockquote>
+<p>可以参考官网解决方案：<a href="https://help.github.com/articles/error-permission-denied-publickey/#platform-windows" target="_blank" rel="external">https://help.github.com/articles/error-permission-denied-publickey/#platform-windows</a></p>
+</blockquote>
+<h2 id="设置-git-全局用户信息"><a href="#设置-git-全局用户信息" class="headerlink" title="设置 git 全局用户信息"></a>设置 git 全局用户信息</h2><p>Git 会根据用户的名字和邮箱来记录提交。GitHub 也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<pre><code>$ git config --global user.name &quot;username&quot;//用户名
+$ git config --global user.email  &quot;emailName@gmail.com&quot;//填写自己的邮箱
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[用hexo在GitHub上写博客]]></title>
+      <url>http://chanh.site/2016/05/27/%E7%94%A8hexo%E5%9C%A8GitHub%E4%B8%8A%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>hexo出自台湾大学生 <a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a> 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br><a id="more"></a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>安装NodeJS</li>
+<li>安装Git</li>
+<li>自己喜欢的编辑器或者IDE</li>
+</ul>
+<blockquote><p>node和git安装方法官网都有，这里不再赘述；IDE本人用的 Webstorm，适合项目多的使用，比较好用的编辑器有 Subline Text 等</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Node 和 Git 都安装好后，可执行如下命令安装hexo:<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>然后，执行init命令初始化hexo到你指定的目录：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="symbol">&lt;folder&gt;</span></span><br><span class="line"><span class="keyword">cd</span> <span class="symbol">&lt;folder&gt;</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><br><blockquote><p>也可以先cd到目标目录，然后再执行hexo init.</p>
+</blockquote></p>
+<h2 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h2><p>cd 到你的init目录，执行如下命令，生成静态页面至 hexo\public\ 目录：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br></pre></td></tr></table></figure><br><blockquote><p>命令必须在init目录下执行，否则不成功，但也不会报错。<br>当你修改文章Tag或内容，不能正确的重新生成内容，可以删除 hexo\db.json 后重试，还不行就到 public 目录删除对应的文件，重新生成。</p>
+</blockquote></p>
+<h2 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h2><p>执行如下命令，启动本地服务，进行文章预览调试。<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure><br>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以看到效果</p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>执行new命令，生成指定名称的文章至 hexo\source_posts\postName.md。<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">[layout]</span> <span class="string">"postName"</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>其中 layout 是可选参数，默认值为 post。有哪些 layout 可以在 scaffolds 目录下查看，这些文件名称就是 layout 名称。当然你也可以添加自己的 layout, 方法就是添加一个文件即可，同时你也可以编辑现有的 layout，比如 post 的 layout 默认是 hexo\scaffolds\post.md<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123; &#123; title &#125; &#125;</span><br><span class="line"><span class="attr">date:</span> &#123; &#123; date &#125; &#125;</span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<blockquote><p>注意：大括号与大括号之间我多加了空格，否则会读出本博文的变量。</p>
+</blockquote>
+我想添加Categories, 以免每次手工输入，只需要修改这个文件添加一行，如下：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123; &#123; title &#125; &#125;</span><br><span class="line"><span class="attr">date:</span> &#123; &#123; date &#125; &#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></li>
+<li>postName是md文件的名字，同时也出现在你文章的URL中，postName如果包含空格，必须用””将其包围，postName可以为中文。<br>看一下刚才生成的文件 hexo\source_posts\postName.md ，内容如下：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> postName <span class="comment">#文章页面上的显示名称，可以任意修改，不会出现在URL中</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-05</span><span class="bullet">-27</span> <span class="number">14</span>:<span class="number">11</span>:<span class="number">07</span> <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></span><br><span class="line"><span class="attr">categories:</span> <span class="comment">#文章分类目录，可以为空，注意:后面有个空格</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#文章标签，可空，多标签请用格式[tag1,tag2,tag3]，注意:后面有个空格</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line">这里开始使用markdown格式输入你的正文。</span><br></pre></td></tr></table></figure>
+接下来，你就可以用喜爱的编辑器尽情书写你的文章。关于markdown语法，可以查阅官网API。</li>
+</ol>
+<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>在需要显示摘要的地方添加如下代码即可：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以上是摘要</span><br><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br><span class="line">以下是余下全文</span><br></pre></td></tr></table></figure><br>more以上内容即是文章摘要，在主页显示，more以下内容点击『 More &gt;&gt; 』链接打开全文才显示。<br><blockquote><p>注意：hexo中所有文件的编码格式均是UTF-8。</p>
+</blockquote></p>
+<h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p>萝卜白菜各有所爱，玩博客换主题是必不可少的，hexo 的主题列表 <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Themes</a> 。<br>我比较喜欢 <a href="http://github.com/A-limon/pacman" target="_blank" rel="external">pacman</a> ， <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee</a> 。 Pacman 简洁大方小清新，同时移动版本支持的也很好，但作者并没有把很多参数分离出来给出可配置项，我最终选择了 yelee, 个人感觉效果更炫一点 。</p>
+<ol>
+<li><p>安装主题的方法就是一句git命令：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，打开 hexo_config.yml ，修改主题为 yelee</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">theme:</span> yelee</span><br></pre></td></tr></table></figure>
+<p>打开 hexo\themes\yelee 目录，编辑主题配置文件 _config.yml ；详细配置参照 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee API</a></p>
+</li>
+<li><p>更新主题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/yelee</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="404-页面"><a href="#404-页面" class="headerlink" title="404 页面"></a>404 页面</h2><p>GitHub Pages 自定义404页面 非常容易，直接在根目录下创建自己的 404.html 就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用 hexo server 在本机调试也是不起作用的。<br>其实，404页面可以做更多有意义的事，来做个404公益项目吧。做点有意义的事情，也对得起这个域名。<br>目前有如下几个公益404接入地址，我选择了腾讯的。404页面，每个人可以做的更多。</p>
+<ul>
+<li><a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a></li>
+<li><a href="http://yibo.iyiyun.com/Index/web404" target="_blank" rel="external">404公益_益云(公益互联网)社会创新中心</a></li>
+<li><a href="http://404page.missingkids.org.tw/" target="_blank" rel="external">失蹤兒童少年資料管理中心404</a></li>
+</ul>
+<h2 id="申请域名（可选）"><a href="#申请域名（可选）" class="headerlink" title="申请域名（可选）"></a>申请域名（可选）</h2><p>GitHubPages默认为每个用户分配了一个二级域名『your_user_name.github.io』。<br>如果你对上述域名不满意，可以到 <a href="http://www.godaddy.com/" target="_blank" rel="external">狗爹</a> 上申请一个自己的域名，然后绑定到GitHub Pages。绑定方法很简单，在repo根目录下建立一个CNAME文件，里面写上域名即可。</p>
+<h3 id="GoDaddy"><a href="#GoDaddy" class="headerlink" title="GoDaddy"></a>GoDaddy</h3><p>买域名首选狗爹，国内的服务商大家都懂的。<br>目前.site域名只要￥20，但据说续费比较贵，我是先玩下，一年后再换，至于搜索引擎重新索引之类的，无所谓。.me和.com域名稍微贵点，大约￥60-100，网上有很多优惠码可用，可惜有的优惠码有限制。比如有个.com域名优惠码只要$0.99，但只能用国外信用卡购买。更多优惠码可以自行谷歌或到 <a href="http://www.dute.me/" target="_blank" rel="external">独特优惠码</a> 找。不着急的同学可以将中意的域名加入购物车先不付款，过几天，狗爹就会发优惠信息给你。狗爹不定期也会有活动，可以多关注。<br>付款后，需要稍微等一会你才会拿到域名，特别是支付宝付款的，要等大约半小时左右。此外域名要一年年的买，这样比较划算。</p>
+<h3 id="DNSPod"><a href="#DNSPod" class="headerlink" title="DNSPod"></a>DNSPod</h3><p>GoDaddy的NameServers有时会被墙，因此墙裂推荐国内的 <a href="http://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a> 解析域名，免费服务真心不错。支持微信/邮件提醒，监控与报警，访问统计，健康诊断，搜索引擎推送，速度哇哇的，对于我来说足够。<br>两步设置就可以搞定，怎么操作参考 <a href="http://support.dnspod.cn/Kb/showarticle/tsid/42" target="_blank" rel="external">Godaddy注册商域名修改DNS地址</a> 。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="meta">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="meta">#新建页面</span></span><br><span class="line">hexo generate <span class="meta">#生成静态页面至public目录</span></span><br><span class="line">hexo <span class="keyword">server</span> <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="meta">#将.deploy目录部署到GitHub</span></span><br></pre></td></tr></table></figure>
+<h3 id="常用复合命令"><a href="#常用复合命令" class="headerlink" title="常用复合命令"></a>常用复合命令</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br><span class="line">hexo <span class="keyword">server</span> -w</span><br></pre></td></tr></table></figure>
+<h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo <span class="keyword">new</span></span><br><span class="line">hexo g == hexo <span class="keyword">generate</span></span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[销售员专用（hybrid app）混合应用]]></title>
+      <url>http://chanh.site/2015/07/14/salesperson/</url>
+      <content type="html"><![CDATA[<p>一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。<br><a id="more"></a></p>
+<h2 id="用到的技术"><a href="#用到的技术" class="headerlink" title="用到的技术"></a>用到的技术</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">移动端</th>
+<th style="text-align:center">服务端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://angularjs.org/" target="_blank" rel="external">Angular.js</a> <img src="https://avatars1.githubusercontent.com/u/139426?s=30" alt="Angular.js"></td>
+<td style="text-align:center"><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> <img src="http://nodejs.org/images/logo-light.svg" height="30" width="80"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://ionicframework.com/" target="_blank" rel="external">Ionic</a> <img src="http://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" height="45" width="80"></td>
+<td style="text-align:center"><a href="http://www.mongodb.org/" target="_blank" rel="external">MongoDB</a> <img src="https://avatars3.githubusercontent.com/u/45120?v=2&amp;s=30" alt="MongoDB"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://material.angularjs.org/" target="_blank" rel="external">Material Design</a> <img src="https://avatars1.githubusercontent.com/u/139426?s=30" alt="Angularjs"></td>
+<td style="text-align:center"><a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a><img src="https://cldup.com/wpGXm1cWwB.png" height="40" width="145"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://cordova.apache.org/" target="_blank" rel="external">Cordova</a> <img src="https://cordova.apache.org/images/cordova_256.png" height="35" width="45">  &nbsp; <a href="https://www.jpush.cn/" target="_blank" rel="external">JPush</a>极光推送</td>
+<td style="text-align:center"><a href="http://redis.io/" target="_blank" rel="external">Redis</a> <img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/467px-Redis_Logo.svg.png?v=2&s=30" height="35" width="125"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="应用架构"><a href="#应用架构" class="headerlink" title="应用架构"></a>应用架构</h2><p>一个端到端的应用架构<br><img src="/2015/07/14/salesperson/salesperson-diagram.png" alt="[应用架构]" title="[应用架构]"></p>
+<h3 id="数据库层"><a href="#数据库层" class="headerlink" title="数据库层"></a>数据库层</h3><p>选择MongoDB数据库,因为它易于存储JSON文档，且比较灵活。数据库有3个(collections)集合。</p>
+<ol>
+<li><p><strong>users</strong> - 存储销售员基本信息, 下面是doc结构：</p>
+<figure class="highlight dts"><figcaption><span>User</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="symbol">    name:</span>  <span class="string">"姓名"</span>,</span><br><span class="line"><span class="symbol">    username:</span> <span class="string">"用户名"</span>,</span><br><span class="line"><span class="symbol">    password:</span> <span class="string">"密码"</span>,</span><br><span class="line"><span class="symbol">    salt:</span> <span class="string">""</span>,</span><br><span class="line"><span class="symbol">    sex:</span> <span class="string">"性别"</span>,</span><br><span class="line"><span class="symbol">    nation:</span> <span class="string">"民族"</span>,</span><br><span class="line"><span class="symbol">    provider:</span> <span class="string">"local"</span>,<span class="comment">// passport strategy</span></span><br><span class="line"><span class="symbol">    updated:</span> Date,</span><br><span class="line"><span class="symbol">    created:</span> Date</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+<li><p><strong>orders</strong> - 存储销售员的订单信息, 下面是doc结构：</p>
+<figure class="highlight actionscript"><figcaption><span>Order</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"customer"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"id43214"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"李文"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15210104324"</span>, <span class="comment">//电话</span></span><br><span class="line">        <span class="string">"company"</span>: <span class="string">"中国海外建设"</span> <span class="comment">//公司名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"salesperson"</span>: <span class="string">"wangqh-a"</span>, <span class="comment">//销售员ID</span></span><br><span class="line">    <span class="string">"toTrack"</span>: <span class="literal">false</span>, <span class="comment">//是否跟进</span></span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span> <span class="comment">// 是否有盗版</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+<li><p><strong>projects</strong> - 存储订单中的工程信息, 下面是doc结构：</p>
+<figure class="highlight actionscript"><figcaption><span>Project</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"工程名称"</span>,</span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">    <span class="string">"keys"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"keyNumber"</span>: <span class="string">"v423423"</span>,</span><br><span class="line">            <span class="string">"isPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否为盗版</span></span><br><span class="line">            <span class="string">"notes"</span>: <span class="string">""</span>, <span class="comment">// 备注</span></span><br><span class="line">            <span class="string">"usedTime"</span>: <span class="number">432142214324</span> <span class="comment">// 使用时间</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"order"</span>: <span class="string">"orderId"</span> <span class="comment">// 与 order 关联</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+</ol>
+<p>从ＡＰ推送过来的数据结构:<br><figure class="highlight actionscript"><figcaption><span>AP 推送信息结构</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"customer"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"id43214"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"李文"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15210104324"</span>, <span class="comment">//电话</span></span><br><span class="line">        <span class="string">"company"</span>: <span class="string">"中国海外建设"</span> <span class="comment">//公司名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"salesperson"</span>: <span class="string">"wangqh-a"</span>, <span class="comment">//销售员ID</span></span><br><span class="line">    <span class="string">"toTrack"</span>: <span class="literal">false</span>, <span class="comment">//是否跟进</span></span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">    <span class="string">"projects"</span>: [ </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"工程名称"</span>,</span><br><span class="line">            <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">            <span class="string">"details"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"keyNumber"</span>: <span class="string">"v423423"</span>,</span><br><span class="line">                    <span class="string">"isPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否为盗版</span></span><br><span class="line">                    <span class="string">"notes"</span>: <span class="string">""</span>, <span class="comment">// 备注</span></span><br><span class="line">                    <span class="string">"usedTime"</span>: <span class="number">432142214324</span> <span class="comment">// 使用时间</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> </p>
+<h3 id="REST-服务层"><a href="#REST-服务层" class="headerlink" title="REST 服务层"></a>REST 服务层</h3><p>这是整个应用的核心。已认证过的用户，向服务层请求时，根据不同请求作不同的数据库操作。</p>
+<ul>
+<li>使用Node.js作为服务器</li>
+<li>使用express框架实现 REST API</li>
+<li>使用mongoose实现数据模型</li>
+<li>使用JWT生成和验证Token</li>
+<li>使用Redis管理与存储Token</li>
+</ul>
+<p><strong>服务端 Controller</strong></p>
+<ol>
+<li>Sign In: <strong>登录</strong> 先在本地库中查询是否存在用户，存在即返回 Token；<br> 不存在就向公司域帐号请求认证，成功后向hr系统请求用户信息并保存到数据库。</li>
+<li>Sign Out: <strong>退出</strong> 删除当前 Token</li>
+<li>Orders: <strong>订单</strong> 接收从AP系统推送的订单，并用JPush推到前端。 另外，跟踪订单：把订单的跟踪状态置为 true</li>
+<li>Projects: <strong>工程</strong> 根据orderId获得工程列表，或用projectIda 获取 keys(工程内的加密锁列表)</li>
+</ol>
+<h3 id="客户端层"><a href="#客户端层" class="headerlink" title="客户端层"></a>客户端层</h3><p>下列是主要用到的技术</p>
+<ul>
+<li>主框架使用 IONIC(cordova + angularJs)</li>
+<li>主题使用 Angular Material</li>
+<li>消息推送使用 jPush 第三方服务</li>
+</ul>
+<p><strong> 客户端 Controller </strong></p>
+<ol>
+<li>Sign In: 登录页</li>
+<li>Account: 销售员个人信息页面</li>
+<li>Orders: 订单列表页面，列出ap系统推送给销售员的订单</li>
+<li>Projects: 工程列表页面，订单的下级页面，列出此订单里的所有工程</li>
+<li>keys: 工程详情页，工程的下级页面，列出此工程里的加密锁列表</li>
+</ol>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

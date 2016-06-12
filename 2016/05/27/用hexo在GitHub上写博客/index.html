@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>用hexo在GitHub上写博客 | Chanh&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="hexo出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用hexo在GitHub上写博客">
+<meta property="og:url" content="http://chanh.site/2016/05/27/用hexo在GitHub上写博客/index.html">
+<meta property="og:site_name" content="Chanh's Blog">
+<meta property="og:description" content="hexo出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。">
+<meta property="og:updated_time" content="2016-05-30T09:34:58.614Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用hexo在GitHub上写博客">
+<meta name="twitter:description" content="hexo出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。">
+  
+    <link rel="alternative" href="/atom.xml" title="Chanh&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: true
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Chanh Wang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">码农，程序猿，JSer</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <div class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </div>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Router/">React-Router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflux/">Reflux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSHKey/">SSHKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJs/">angularJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ellipsis/">ellipsis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hybrid/">hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/white-space/">white-space</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-break/">word-break</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-wrap/">word-wrap</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Chanh Wang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Chanh Wang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">码农，程序猿，JSer</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-用hexo在GitHub上写博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/27/用hexo在GitHub上写博客/" class="article-date">
+      <time datetime="2016-05-27T06:11:07.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      用hexo在GitHub上写博客
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/触类旁通/">触类旁通</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>hexo出自台湾大学生 <a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a> 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br><a id="more"></a></p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>安装NodeJS</li>
+<li>安装Git</li>
+<li>自己喜欢的编辑器或者IDE</li>
+</ul>
+<blockquote><p>node和git安装方法官网都有，这里不再赘述；IDE本人用的 Webstorm，适合项目多的使用，比较好用的编辑器有 Subline Text 等</p>
+</blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Node 和 Git 都安装好后，可执行如下命令安装hexo:<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>然后，执行init命令初始化hexo到你指定的目录：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="symbol">&lt;folder&gt;</span></span><br><span class="line"><span class="keyword">cd</span> <span class="symbol">&lt;folder&gt;</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><br><blockquote><p>也可以先cd到目标目录，然后再执行hexo init.</p>
+</blockquote></p>
+<h2 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h2><p>cd 到你的init目录，执行如下命令，生成静态页面至 hexo\public\ 目录：<br><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br></pre></td></tr></table></figure><br><blockquote><p>命令必须在init目录下执行，否则不成功，但也不会报错。<br>当你修改文章Tag或内容，不能正确的重新生成内容，可以删除 hexo\db.json 后重试，还不行就到 public 目录删除对应的文件，重新生成。</p>
+</blockquote></p>
+<h2 id="本地启动"><a href="#本地启动" class="headerlink" title="本地启动"></a>本地启动</h2><p>执行如下命令，启动本地服务，进行文章预览调试。<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure><br>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以看到效果</p>
+<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p>执行new命令，生成指定名称的文章至 hexo\source_posts\postName.md。<br><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">[layout]</span> <span class="string">"postName"</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>其中 layout 是可选参数，默认值为 post。有哪些 layout 可以在 scaffolds 目录下查看，这些文件名称就是 layout 名称。当然你也可以添加自己的 layout, 方法就是添加一个文件即可，同时你也可以编辑现有的 layout，比如 post 的 layout 默认是 hexo\scaffolds\post.md<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123; &#123; title &#125; &#125;</span><br><span class="line"><span class="attr">date:</span> &#123; &#123; date &#125; &#125;</span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<blockquote><p>注意：大括号与大括号之间我多加了空格，否则会读出本博文的变量。</p>
+</blockquote>
+我想添加Categories, 以免每次手工输入，只需要修改这个文件添加一行，如下：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> &#123; &#123; title &#125; &#125;</span><br><span class="line"><span class="attr">date:</span> &#123; &#123; date &#125; &#125;</span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></li>
+<li>postName是md文件的名字，同时也出现在你文章的URL中，postName如果包含空格，必须用””将其包围，postName可以为中文。<br>看一下刚才生成的文件 hexo\source_posts\postName.md ，内容如下：<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> postName <span class="comment">#文章页面上的显示名称，可以任意修改，不会出现在URL中</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-05</span><span class="bullet">-27</span> <span class="number">14</span>:<span class="number">11</span>:<span class="number">07</span> <span class="comment">#文章生成时间，一般不改，当然也可以任意修改</span></span><br><span class="line"><span class="attr">categories:</span> <span class="comment">#文章分类目录，可以为空，注意:后面有个空格</span></span><br><span class="line"><span class="attr">tags:</span> <span class="comment">#文章标签，可空，多标签请用格式[tag1,tag2,tag3]，注意:后面有个空格</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line">这里开始使用markdown格式输入你的正文。</span><br></pre></td></tr></table></figure>
+接下来，你就可以用喜爱的编辑器尽情书写你的文章。关于markdown语法，可以查阅官网API。</li>
+</ol>
+<h2 id="文章摘要"><a href="#文章摘要" class="headerlink" title="文章摘要"></a>文章摘要</h2><p>在需要显示摘要的地方添加如下代码即可：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以上是摘要</span><br><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br><span class="line">以下是余下全文</span><br></pre></td></tr></table></figure><br>more以上内容即是文章摘要，在主页显示，more以下内容点击『 More &gt;&gt; 』链接打开全文才显示。<br><blockquote><p>注意：hexo中所有文件的编码格式均是UTF-8。</p>
+</blockquote></p>
+<h2 id="主题安装"><a href="#主题安装" class="headerlink" title="主题安装"></a>主题安装</h2><p>萝卜白菜各有所爱，玩博客换主题是必不可少的，hexo 的主题列表 <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Themes</a> 。<br>我比较喜欢 <a href="http://github.com/A-limon/pacman" target="_blank" rel="external">pacman</a> ， <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">yelee</a> 。 Pacman 简洁大方小清新，同时移动版本支持的也很好，但作者并没有把很多参数分离出来给出可配置项，我最终选择了 yelee, 个人感觉效果更炫一点 。</p>
+<ol>
+<li><p>安装主题的方法就是一句git命令：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，打开 hexo_config.yml ，修改主题为 yelee</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">theme:</span> yelee</span><br></pre></td></tr></table></figure>
+<p>打开 hexo\themes\yelee 目录，编辑主题配置文件 _config.yml ；详细配置参照 <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee API</a></p>
+</li>
+<li><p>更新主题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/yelee</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="404-页面"><a href="#404-页面" class="headerlink" title="404 页面"></a>404 页面</h2><p>GitHub Pages 自定义404页面 非常容易，直接在根目录下创建自己的 404.html 就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用 hexo server 在本机调试也是不起作用的。<br>其实，404页面可以做更多有意义的事，来做个404公益项目吧。做点有意义的事情，也对得起这个域名。<br>目前有如下几个公益404接入地址，我选择了腾讯的。404页面，每个人可以做的更多。</p>
+<ul>
+<li><a href="http://www.qq.com/404/" target="_blank" rel="external">腾讯公益404</a></li>
+<li><a href="http://yibo.iyiyun.com/Index/web404" target="_blank" rel="external">404公益_益云(公益互联网)社会创新中心</a></li>
+<li><a href="http://404page.missingkids.org.tw/" target="_blank" rel="external">失蹤兒童少年資料管理中心404</a></li>
+</ul>
+<h2 id="申请域名（可选）"><a href="#申请域名（可选）" class="headerlink" title="申请域名（可选）"></a>申请域名（可选）</h2><p>GitHubPages默认为每个用户分配了一个二级域名『your_user_name.github.io』。<br>如果你对上述域名不满意，可以到 <a href="http://www.godaddy.com/" target="_blank" rel="external">狗爹</a> 上申请一个自己的域名，然后绑定到GitHub Pages。绑定方法很简单，在repo根目录下建立一个CNAME文件，里面写上域名即可。</p>
+<h3 id="GoDaddy"><a href="#GoDaddy" class="headerlink" title="GoDaddy"></a>GoDaddy</h3><p>买域名首选狗爹，国内的服务商大家都懂的。<br>目前.site域名只要￥20，但据说续费比较贵，我是先玩下，一年后再换，至于搜索引擎重新索引之类的，无所谓。.me和.com域名稍微贵点，大约￥60-100，网上有很多优惠码可用，可惜有的优惠码有限制。比如有个.com域名优惠码只要$0.99，但只能用国外信用卡购买。更多优惠码可以自行谷歌或到 <a href="http://www.dute.me/" target="_blank" rel="external">独特优惠码</a> 找。不着急的同学可以将中意的域名加入购物车先不付款，过几天，狗爹就会发优惠信息给你。狗爹不定期也会有活动，可以多关注。<br>付款后，需要稍微等一会你才会拿到域名，特别是支付宝付款的，要等大约半小时左右。此外域名要一年年的买，这样比较划算。</p>
+<h3 id="DNSPod"><a href="#DNSPod" class="headerlink" title="DNSPod"></a>DNSPod</h3><p>GoDaddy的NameServers有时会被墙，因此墙裂推荐国内的 <a href="http://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a> 解析域名，免费服务真心不错。支持微信/邮件提醒，监控与报警，访问统计，健康诊断，搜索引擎推送，速度哇哇的，对于我来说足够。<br>两步设置就可以搞定，怎么操作参考 <a href="http://support.dnspod.cn/Kb/showarticle/tsid/42" target="_blank" rel="external">Godaddy注册商域名修改DNS地址</a> 。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> <span class="meta">#新建文章</span></span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> <span class="meta">#新建页面</span></span><br><span class="line">hexo generate <span class="meta">#生成静态页面至public目录</span></span><br><span class="line">hexo <span class="keyword">server</span> <span class="meta">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></span><br><span class="line">hexo deploy <span class="meta">#将.deploy目录部署到GitHub</span></span><br></pre></td></tr></table></figure>
+<h3 id="常用复合命令"><a href="#常用复合命令" class="headerlink" title="常用复合命令"></a>常用复合命令</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy -g</span><br><span class="line">hexo <span class="keyword">server</span> -w</span><br></pre></td></tr></table></figure>
+<h3 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo <span class="keyword">new</span></span><br><span class="line">hexo g == hexo <span class="keyword">generate</span></span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/05/27/用hexo在GitHub上写博客/">用hexo在GitHub上写博客</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Chanh Wang</a></p>
+        <p><span>发布时间:</span>2016-05-27, 14:11:07</p>
+        <p><span>最后更新:</span>2016-05-30, 17:34:58</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/27/用hexo在GitHub上写博客/" title="用hexo在GitHub上写博客">http://chanh.site/2016/05/27/用hexo在GitHub上写博客/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://chanh.site/2016/05/27/用hexo在GitHub上写博客/　　作者: Chanh Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/01/settingsSSHKeysOfGitHub/">
+                    设置 GitHub SSH Keys
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/07/14/salesperson/">
+                    销售员专用（hybrid app）混合应用
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境准备"><span class="toc-number">1.</span> <span class="toc-text">环境准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化"><span class="toc-number">3.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生成静态页面"><span class="toc-number">4.</span> <span class="toc-text">生成静态页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地启动"><span class="toc-number">5.</span> <span class="toc-text">本地启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写文章"><span class="toc-number">6.</span> <span class="toc-text">写文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文章摘要"><span class="toc-number">7.</span> <span class="toc-text">文章摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题安装"><span class="toc-number">8.</span> <span class="toc-text">主题安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#404-页面"><span class="toc-number">9.</span> <span class="toc-text">404 页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#申请域名（可选）"><span class="toc-number">10.</span> <span class="toc-text">申请域名（可选）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GoDaddy"><span class="toc-number">10.1.</span> <span class="toc-text">GoDaddy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNSPod"><span class="toc-number">10.2.</span> <span class="toc-text">DNSPod</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">11.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-number">11.1.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用复合命令"><span class="toc-number">11.2.</span> <span class="toc-text">常用复合命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简写"><span class="toc-number">11.3.</span> <span class="toc-text">简写</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"用hexo在GitHub上写博客　| Chanh's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/05/27/用hexo在GitHub上写博客/" data-title="用hexo在GitHub上写博客" data-url="http://chanh.site/2016/05/27/用hexo在GitHub上写博客/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chanh"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/01/settingsSSHKeysOfGitHub/" title="上一篇: 设置 GitHub SSH Keys">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/07/14/salesperson/" title="下一篇: 销售员专用（hybrid app）混合应用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/08/css-强制换行/">css 强制换行及强制不换行</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/">一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/settingsSSHKeysOfGitHub/">设置 GitHub SSH Keys</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/27/用hexo在GitHub上写博客/">用hexo在GitHub上写博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/14/salesperson/">销售员专用（hybrid app）混合应用</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Chanh Wang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65160968-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

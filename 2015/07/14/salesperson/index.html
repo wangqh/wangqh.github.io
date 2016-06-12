@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>销售员专用（hybrid app）混合应用 | Chanh&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="销售员专用（hybrid app）混合应用">
+<meta property="og:url" content="http://chanh.site/2015/07/14/salesperson/index.html">
+<meta property="og:site_name" content="Chanh's Blog">
+<meta property="og:description" content="一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。">
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/139426?s=30">
+<meta property="og:image" content="http://nodejs.org/images/logo-light.svg">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg">
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/45120?v=2&s=30">
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/139426?s=30">
+<meta property="og:image" content="https://cldup.com/wpGXm1cWwB.png">
+<meta property="og:image" content="https://cordova.apache.org/images/cordova_256.png">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/467px-Redis_Logo.svg.png?v=2&s=30">
+<meta property="og:image" content="http://chanh.site/2015/07/14/salesperson/salesperson-diagram.png">
+<meta property="og:updated_time" content="2016-06-02T09:39:51.903Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="销售员专用（hybrid app）混合应用">
+<meta name="twitter:description" content="一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。">
+<meta name="twitter:image" content="https://avatars1.githubusercontent.com/u/139426?s=30">
+  
+    <link rel="alternative" href="/atom.xml" title="Chanh&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: true
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Chanh Wang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">码农，程序猿，JSer</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <div class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </div>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Router/">React-Router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflux/">Reflux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSHKey/">SSHKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJs/">angularJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ellipsis/">ellipsis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hybrid/">hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/white-space/">white-space</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-break/">word-break</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-wrap/">word-wrap</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Chanh Wang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Chanh Wang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">码农，程序猿，JSer</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-salesperson" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/14/salesperson/" class="article-date">
+      <time datetime="2015-07-14T08:25:12.000Z" itemprop="datePublished">2015-07-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      销售员专用（hybrid app）混合应用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularJs/">angularJs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova/">cordova</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hybrid/">hybrid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。<br><a id="more"></a></p>
+<h2 id="用到的技术"><a href="#用到的技术" class="headerlink" title="用到的技术"></a>用到的技术</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">移动端</th>
+<th style="text-align:center">服务端</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://angularjs.org/" target="_blank" rel="external">Angular.js</a> <img src="https://avatars1.githubusercontent.com/u/139426?s=30" alt="Angular.js"></td>
+<td style="text-align:center"><a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> <img src="http://nodejs.org/images/logo-light.svg" height="30" width="80"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://ionicframework.com/" target="_blank" rel="external">Ionic</a> <img src="http://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" height="45" width="80"></td>
+<td style="text-align:center"><a href="http://www.mongodb.org/" target="_blank" rel="external">MongoDB</a> <img src="https://avatars3.githubusercontent.com/u/45120?v=2&amp;s=30" alt="MongoDB"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://material.angularjs.org/" target="_blank" rel="external">Material Design</a> <img src="https://avatars1.githubusercontent.com/u/139426?s=30" alt="Angularjs"></td>
+<td style="text-align:center"><a href="http://expressjs.com/" target="_blank" rel="external">Express.js</a><img src="https://cldup.com/wpGXm1cWwB.png" height="40" width="145"></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="https://cordova.apache.org/" target="_blank" rel="external">Cordova</a> <img src="https://cordova.apache.org/images/cordova_256.png" height="35" width="45">  &nbsp; <a href="https://www.jpush.cn/" target="_blank" rel="external">JPush</a>极光推送</td>
+<td style="text-align:center"><a href="http://redis.io/" target="_blank" rel="external">Redis</a> <img src="http://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/467px-Redis_Logo.svg.png?v=2&s=30" height="35" width="125"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="应用架构"><a href="#应用架构" class="headerlink" title="应用架构"></a>应用架构</h2><p>一个端到端的应用架构<br><img src="/2015/07/14/salesperson/salesperson-diagram.png" alt="[应用架构]" title="[应用架构]"></p>
+<h3 id="数据库层"><a href="#数据库层" class="headerlink" title="数据库层"></a>数据库层</h3><p>选择MongoDB数据库,因为它易于存储JSON文档，且比较灵活。数据库有3个(collections)集合。</p>
+<ol>
+<li><p><strong>users</strong> - 存储销售员基本信息, 下面是doc结构：</p>
+<figure class="highlight dts"><figcaption><span>User</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="symbol">    name:</span>  <span class="string">"姓名"</span>,</span><br><span class="line"><span class="symbol">    username:</span> <span class="string">"用户名"</span>,</span><br><span class="line"><span class="symbol">    password:</span> <span class="string">"密码"</span>,</span><br><span class="line"><span class="symbol">    salt:</span> <span class="string">""</span>,</span><br><span class="line"><span class="symbol">    sex:</span> <span class="string">"性别"</span>,</span><br><span class="line"><span class="symbol">    nation:</span> <span class="string">"民族"</span>,</span><br><span class="line"><span class="symbol">    provider:</span> <span class="string">"local"</span>,<span class="comment">// passport strategy</span></span><br><span class="line"><span class="symbol">    updated:</span> Date,</span><br><span class="line"><span class="symbol">    created:</span> Date</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+<li><p><strong>orders</strong> - 存储销售员的订单信息, 下面是doc结构：</p>
+<figure class="highlight actionscript"><figcaption><span>Order</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"customer"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"id43214"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"李文"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15210104324"</span>, <span class="comment">//电话</span></span><br><span class="line">        <span class="string">"company"</span>: <span class="string">"中国海外建设"</span> <span class="comment">//公司名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"salesperson"</span>: <span class="string">"wangqh-a"</span>, <span class="comment">//销售员ID</span></span><br><span class="line">    <span class="string">"toTrack"</span>: <span class="literal">false</span>, <span class="comment">//是否跟进</span></span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span> <span class="comment">// 是否有盗版</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+<li><p><strong>projects</strong> - 存储订单中的工程信息, 下面是doc结构：</p>
+<figure class="highlight actionscript"><figcaption><span>Project</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"工程名称"</span>,</span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">    <span class="string">"keys"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"keyNumber"</span>: <span class="string">"v423423"</span>,</span><br><span class="line">            <span class="string">"isPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否为盗版</span></span><br><span class="line">            <span class="string">"notes"</span>: <span class="string">""</span>, <span class="comment">// 备注</span></span><br><span class="line">            <span class="string">"usedTime"</span>: <span class="number">432142214324</span> <span class="comment">// 使用时间</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"order"</span>: <span class="string">"orderId"</span> <span class="comment">// 与 order 关联</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
+</li>
+</ol>
+<p>从ＡＰ推送过来的数据结构:<br><figure class="highlight actionscript"><figcaption><span>AP 推送信息结构</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"customer"</span>: &#123;</span><br><span class="line">        <span class="string">"id"</span>: <span class="string">"id43214"</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"李文"</span>,</span><br><span class="line">        <span class="string">"phone"</span>: <span class="string">"15210104324"</span>, <span class="comment">//电话</span></span><br><span class="line">        <span class="string">"company"</span>: <span class="string">"中国海外建设"</span> <span class="comment">//公司名称</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"salesperson"</span>: <span class="string">"wangqh-a"</span>, <span class="comment">//销售员ID</span></span><br><span class="line">    <span class="string">"toTrack"</span>: <span class="literal">false</span>, <span class="comment">//是否跟进</span></span><br><span class="line">    <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">    <span class="string">"projects"</span>: [ </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"name"</span>: <span class="string">"工程名称"</span>,</span><br><span class="line">            <span class="string">"hasPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否有盗版</span></span><br><span class="line">            <span class="string">"details"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"keyNumber"</span>: <span class="string">"v423423"</span>,</span><br><span class="line">                    <span class="string">"isPirate"</span>: <span class="literal">true</span>, <span class="comment">// 是否为盗版</span></span><br><span class="line">                    <span class="string">"notes"</span>: <span class="string">""</span>, <span class="comment">// 备注</span></span><br><span class="line">                    <span class="string">"usedTime"</span>: <span class="number">432142214324</span> <span class="comment">// 使用时间</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> </p>
+<h3 id="REST-服务层"><a href="#REST-服务层" class="headerlink" title="REST 服务层"></a>REST 服务层</h3><p>这是整个应用的核心。已认证过的用户，向服务层请求时，根据不同请求作不同的数据库操作。</p>
+<ul>
+<li>使用Node.js作为服务器</li>
+<li>使用express框架实现 REST API</li>
+<li>使用mongoose实现数据模型</li>
+<li>使用JWT生成和验证Token</li>
+<li>使用Redis管理与存储Token</li>
+</ul>
+<p><strong>服务端 Controller</strong></p>
+<ol>
+<li>Sign In: <strong>登录</strong> 先在本地库中查询是否存在用户，存在即返回 Token；<br> 不存在就向公司域帐号请求认证，成功后向hr系统请求用户信息并保存到数据库。</li>
+<li>Sign Out: <strong>退出</strong> 删除当前 Token</li>
+<li>Orders: <strong>订单</strong> 接收从AP系统推送的订单，并用JPush推到前端。 另外，跟踪订单：把订单的跟踪状态置为 true</li>
+<li>Projects: <strong>工程</strong> 根据orderId获得工程列表，或用projectIda 获取 keys(工程内的加密锁列表)</li>
+</ol>
+<h3 id="客户端层"><a href="#客户端层" class="headerlink" title="客户端层"></a>客户端层</h3><p>下列是主要用到的技术</p>
+<ul>
+<li>主框架使用 IONIC(cordova + angularJs)</li>
+<li>主题使用 Angular Material</li>
+<li>消息推送使用 jPush 第三方服务</li>
+</ul>
+<p><strong> 客户端 Controller </strong></p>
+<ol>
+<li>Sign In: 登录页</li>
+<li>Account: 销售员个人信息页面</li>
+<li>Orders: 订单列表页面，列出ap系统推送给销售员的订单</li>
+<li>Projects: 工程列表页面，订单的下级页面，列出此订单里的所有工程</li>
+<li>keys: 工程详情页，工程的下级页面，列出此工程里的加密锁列表</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/07/14/salesperson/">销售员专用（hybrid app）混合应用</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Chanh Wang</a></p>
+        <p><span>发布时间:</span>2015-07-14, 16:25:12</p>
+        <p><span>最后更新:</span>2016-06-02, 17:39:51</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/07/14/salesperson/" title="销售员专用（hybrid app）混合应用">http://chanh.site/2015/07/14/salesperson/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://chanh.site/2015/07/14/salesperson/　　作者: Chanh Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/05/27/用hexo在GitHub上写博客/">
+                    用hexo在GitHub上写博客
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用到的技术"><span class="toc-number">1.</span> <span class="toc-text">用到的技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用架构"><span class="toc-number">2.</span> <span class="toc-text">应用架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库层"><span class="toc-number">2.1.</span> <span class="toc-text">数据库层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REST-服务层"><span class="toc-number">2.2.</span> <span class="toc-text">REST 服务层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端层"><span class="toc-number">2.3.</span> <span class="toc-text">客户端层</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"销售员专用（hybrid app）混合应用　| Chanh's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/07/14/salesperson/" data-title="销售员专用（hybrid app）混合应用" data-url="http://chanh.site/2015/07/14/salesperson/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chanh"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/05/27/用hexo在GitHub上写博客/" title="上一篇: 用hexo在GitHub上写博客">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/08/css-强制换行/">css 强制换行及强制不换行</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/">一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/settingsSSHKeysOfGitHub/">设置 GitHub SSH Keys</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/27/用hexo在GitHub上写博客/">用hexo在GitHub上写博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/14/salesperson/">销售员专用（hybrid app）混合应用</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Chanh Wang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65160968-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  
+  <title>一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目 | Chanh&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="此项目基于 gulp, less 和 webpack构建. View 层用 React 实现, 内部数据流使用  Reflux架构； 路由管理使用 React-Router.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目">
+<meta property="og:url" content="http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/index.html">
+<meta property="og:site_name" content="Chanh's Blog">
+<meta property="og:description" content="此项目基于 gulp, less 和 webpack构建. View 层用 React 实现, 内部数据流使用  Reflux架构； 路由管理使用 React-Router.">
+<meta property="og:image" content="http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/reflux.png">
+<meta property="og:updated_time" content="2016-06-02T09:44:57.025Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目">
+<meta name="twitter:description" content="此项目基于 gulp, less 和 webpack构建. View 层用 React 实现, 内部数据流使用  Reflux架构； 路由管理使用 React-Router.">
+<meta name="twitter:image" content="http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/reflux.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Chanh&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+          search: true
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Chanh Wang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">码农，程序猿，JSer</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <div class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </div>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Router/">React-Router</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflux/">Reflux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSHKey/">SSHKey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularJs/">angularJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova/">cordova</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ellipsis/">ellipsis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hybrid/">hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/white-space/">white-space</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-break/">word-break</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word-wrap/">word-wrap</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Chanh Wang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Chanh Wang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">码农，程序猿，JSer</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:wpqh@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/wpqh" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/wangqh" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/chanh.me" title="Facebook"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/" class="article-date">
+      <time datetime="2016-06-02T09:30:31.000Z" itemprop="datePublished">2016-06-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Router/">React-Router</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reflux/">Reflux</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>此项目基于 <a href="https://github.com/gulpjs/gulp" target="_blank" rel="external">gulp</a>, <a href="https://github.com/less/" target="_blank" rel="external">less</a> 和 <a href="https://github.com/webpack/webpack" target="_blank" rel="external">webpack</a>构建. View 层用 <a href="https://github.com/facebook/react" target="_blank" rel="external">React</a> 实现, 内部数据流使用  <a href="https://github.com/spoike/refluxjs" target="_blank" rel="external">Reflux</a>架构； 路由管理使用 <a href="https://github.com/rackt/react-router" target="_blank" rel="external">React-Router</a>.<br><a id="more"></a></p>
+<h2 id="Reflux-架构"><a href="#Reflux-架构" class="headerlink" title="Reflux 架构"></a>Reflux 架构</h2><p>一个单向数据流架构，其中包含三个重要组成部分：Actions, Stores, Components (View)<br>详细参考第三方<a href="https://segmentfault.com/a/1190000002793786" target="_blank" rel="external">中文版API</a><br><img src="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/reflux.png" alt="[Reflux架构]" title="[Reflux架构]"></p>
+<h2 id="项目文件目录"><a href="#项目文件目录" class="headerlink" title="项目文件目录"></a>项目文件目录</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── dist    <span class="comment">// build目录</span></span><br><span class="line">│  ├── css</span><br><span class="line">│  ├── fonts</span><br><span class="line">│  ├── js</span><br><span class="line">│  └── index<span class="selector-class">.html</span></span><br><span class="line">└── src     <span class="comment">// 源文件目录</span></span><br><span class="line">    ├── images    <span class="comment">// 图片目录</span></span><br><span class="line">    ├── less    <span class="comment">// less 文件目录</span></span><br><span class="line">    ├── scripts     <span class="comment">// js 源码</span></span><br><span class="line">    │   ├── app     <span class="comment">// 与 routes 对应的 smart components （智能组件）</span></span><br><span class="line">    │   │   ├── activity    <span class="comment">// 活动页面的 actions stores view</span></span><br><span class="line">    │   │   │   ├── api     <span class="comment">// ajax 请求</span></span><br><span class="line">    │   │   │   ├── components    <span class="comment">// 活动相关组件 view</span></span><br><span class="line">    │   │   │   ├── stores    <span class="comment">// 活动页面的数据模型层</span></span><br><span class="line">    │   │   │   └── actions<span class="selector-class">.js</span>    <span class="comment">// 活动页面的动作交互</span></span><br><span class="line">    │   │   ├── error     <span class="comment">// 404, 403 UI</span></span><br><span class="line">    │   │   ├── event     <span class="comment">// 事件页面的 actions stores view （与活动类同）</span></span><br><span class="line">    │   │   ├── login     <span class="comment">// 登录页面UI</span></span><br><span class="line">    │   │   └── app<span class="selector-class">.jsx</span>     <span class="comment">// layout UI</span></span><br><span class="line">    │   ├── components    <span class="comment">// 通用木偶(Dumb)组件</span></span><br><span class="line">    │   ├── utils     <span class="comment">// auth 服务，常用工具类</span></span><br><span class="line">    │   ├── config<span class="selector-class">.js</span>     <span class="comment">// 常量配置</span></span><br><span class="line">    │   ├── main<span class="selector-class">.js</span>     <span class="comment">// 把 router 组件绑定到 html</span></span><br><span class="line">    │   └── routes<span class="selector-class">.js</span>     <span class="comment">// 路由配置</span></span><br><span class="line">    └── index.html</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>智能(smart)组件：含有状态(state)控制的组件。<br>木偶(Dumb)组件：没有状态(state)控制的展示组件，通常是可复用的部分。</p>
+</blockquote>
+<h2 id="React-Router-路由配置"><a href="#React-Router-路由配置" class="headerlink" title="React Router 路由配置"></a>React Router 路由配置</h2><p>路由通常是一个单页应用的核心，用来控制不同视图间切换。监听 location 中 hash 的变化来实现不同 components 的展视。<br>此应用的 URLs 与 components 对照：<br>URL                               | Components<br>———————————-|———–<br><code>/</code>                               | <code>App</code><br><code>/activity</code>                       | <code>App -&gt; ActivityManage</code><br><code>/activity/add</code>                   | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/edit</code>      | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/unit/add</code>  | <code>App -&gt; UnitAdd</code><br><code>/activity/unit/:unitId/edit</code>     | <code>App -&gt; UnitAdd</code><br><code>/activity/:id/detail</code>            | <code>App -&gt; ActivityDetail</code><br><code>/activity/unit/:id/detail</code>       | <code>App -&gt; UnitDetail</code><br><code>/event</code>                          | <code>App -&gt; EventManage</code><br><code>/accessdenied</code>                   | <code>App -&gt; AccessDenied</code><br><code>/*</code>                              | <code>App -&gt; NotFound</code></p>
+<h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># src/scripts/routes.js</span><br><span class="line"></span><br><span class="line">import &#123; Router, Route, IndexRoute, IndexRedirect, useRouterHistory, hashHistory &#125; from 'react-router';</span><br><span class="line">import &#123; createHashHistory &#125; from 'history'</span><br><span class="line"></span><br><span class="line">const appHistory = useRouterHistory(createHashHistory)(&#123; queryKey: true &#125;);</span><br><span class="line"></span><br><span class="line">const routes = (</span><br><span class="line">  &lt;Router history=&#123;appHistory&#125;&gt;</span><br><span class="line">    &lt;Route path='/' component=&#123; App &#125; onEnter=&#123;onEnterApp&#125;&gt;</span><br><span class="line">      &lt;IndexRedirect to="activity" /&gt;</span><br><span class="line">      &lt;Route path='activity' component=&#123; ActivityManage &#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; &gt;</span><br><span class="line">        &lt;Route path='add' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">        &lt;Route path=':activityId/edit' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">      &lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:activityId/unit/add" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:unitId/edit" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:id/detail" component=&#123;ActivityDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:id/detail" component=&#123;UnitDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path='event' component=&#123; EventManage &#125; onEnter=&#123;requireAuth.bind(this, roles.event)&#125; /&gt;</span><br><span class="line">      &lt;Route path='accessdenied' component=&#123;AccessDenied&#125;/&gt;</span><br><span class="line">      &lt;Route path='*' component=&#123;NotFound&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">  &lt;/Router&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">function onEnterApp(nextState, replace, callback) &#123;</span><br><span class="line">  auth.authorize(null, callback);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function requireAuth(roles, nextState, replace, callback) &#123;</span><br><span class="line">  if(Principal.isIdentityResolved())&#123;</span><br><span class="line">    auth.authorize(roles, callback)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default routes;</span><br></pre></td></tr></table></figure>
+<h3 id="Router-的-history-属性"><a href="#Router-的-history-属性" class="headerlink" title="Router 的 history 属性"></a>Router 的 history 属性</h3><p>React Router 是基于history的。所以 history 是 Router 组件上主要的属性。这里的 History 有三种类型 browserHistory, hashHistory, createMemoryHistory。先简单介绍下这三种类型：</p>
+<ul>
+<li><strong>browserHistory:</strong> 它利用 HTML5 History API 去操纵浏览器的 URL， 并创建真正的 URLs，如：<code>example.com/some/path</code>。同时需要后端程序的配合，把所有前端routes请求都响应index.html。常用在现代浏览器中，IE9及以下体验不好，会刷新整个页面。</li>
+<li><strong>hashHistory:</strong> 它利用URL中的hash(#)值来实现视图的切换。如：<code>example.com/#/some/path</code>。这种方式不需要后端做任何操作，同时能兼容低版的浏览器。此项目选用的就是这种类型。</li>
+<li><strong>createMemoryHistory:</strong> 此类型不能读写浏览器的地址栏URL。常被用在服务端渲染，也可用于测试和其它环境（如：React Native）.它和上面两种有点小区别，就是必须要先创建才能使用，这样也有助于测试。 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> history = createMemoryHistory(location)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>注意：</strong>此项目中其实可以在 history 属性中直接引用 hashHistory 的，之所以用当前的方式，是因为参数 <code>{ queryKey: true}</code> 这个参数是个坑，后面详说。<br><strong>queryKey:</strong> 它用来控制地址栏中是否显示<code>?_k=12l0vf</code>这种随机生成的字符参数；它的作用是用来记录路由切换时的 state 数据；如果此值为<code>false</code>就不会显示这个串，但也不能接收到上个视图的数据。<br>当时强迫症使然，觉得这个串太碍眼，觉得没啥大用，所以就查了API把<code>queryKey: false</code>了，结果是我的眼睛爽了，但出现了 Bug，调试了好久。。。才发现是因为这个设置导致不能接收到 <code>location.state</code>，后来就把这个参数置为 <code>true</code>了，等价于使用 <code>hashHistory</code>。</p>
+</blockquote>
+<h3 id="Route-组件的属性"><a href="#Route-组件的属性" class="headerlink" title="Route 组件的属性"></a>Route 组件的属性</h3><ul>
+<li><strong>path:</strong> 此属性设置路由的 URL，与父级拼接形成绝对路径，如：<code>/activity/:activityId/edit</code></li>
+<li><strong>component:</strong> 此属性设置对应的组件（component）,也就是此路由对应的视图（view）</li>
+<li><strong>onEnter:</strong> 此属性绑定一个路由进入之前的事件回调函数，它有三个参数 nextState, replace, callback. 具体含义不再赘述，参阅官方API；其中第三个参数 callback 如果传入，代表是异步完成，否则是同步。</li>
+</ul>
+<p>此项目的主页面逻辑较为复杂，个人感觉用 Reflux 搞的有点乱，最近在学习 <a href="http://redux.js.org/" target="_blank" rel="external">Redux</a> 架构，打算有时间重构一下。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/">一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Chanh Wang</a></p>
+        <p><span>发布时间:</span>2016-06-02, 17:30:31</p>
+        <p><span>最后更新:</span>2016-06-02, 17:44:57</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/" title="一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目">http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/　　作者: Chanh Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/08/css-强制换行/">
+                    css 强制换行及强制不换行
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/06/01/settingsSSHKeysOfGitHub/">
+                    设置 GitHub SSH Keys
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reflux-架构"><span class="toc-number">1.</span> <span class="toc-text">Reflux 架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目文件目录"><span class="toc-number">2.</span> <span class="toc-text">项目文件目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-Router-路由配置"><span class="toc-number">3.</span> <span class="toc-text">React Router 路由配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码片段"><span class="toc-number">3.1.</span> <span class="toc-text">代码片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Router-的-history-属性"><span class="toc-number">3.2.</span> <span class="toc-text">Router 的 history 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Route-组件的属性"><span class="toc-number">3.3.</span> <span class="toc-text">Route 组件的属性</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目　| Chanh's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/" data-title="一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目" data-url="http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chanh"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/08/css-强制换行/" title="上一篇: css 强制换行及强制不换行">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/06/01/settingsSSHKeysOfGitHub/" title="下一篇: 设置 GitHub SSH Keys">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/08/css-强制换行/">css 强制换行及强制不换行</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/">一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/01/settingsSSHKeysOfGitHub/">设置 GitHub SSH Keys</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/27/用hexo在GitHub上写博客/">用hexo在GitHub上写博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/07/14/salesperson/">销售员专用（hybrid app）混合应用</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 Chanh Wang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-65160968-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://chanh.site/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</loc>
+    <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+    <data>
+        <display>
+        <title>浅析《简约至上：交互式设计四策略》</title>
+        <pubTime>2016-06-25T01:34:39.000Z</pubTime>
+        
+        <tag>简约</tag>
+         
+        <tag>交互</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://chanh.site/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chanh.site/2015/07/14/salesperson/</loc>
+    <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+    <data>
+        <display>
+        <title>销售员专用（hybrid app）混合应用</title>
+        <pubTime>2015-07-14T08:25:12.000Z</pubTime>
+        
+        <tag>hybrid</tag>
+         
+        <tag>nodejs</tag>
+         
+        <tag>angularJs</tag>
+         
+        <tag>cordova</tag>
+         
+        <tag>mongoDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="术业专攻" url="http://chanh.site/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chanh.site/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/</loc>
     <lastmod>2016-06-08T09:46:03.292Z</lastmod>
     <data>
@@ -42,34 +92,6 @@
         <tag>Reflux</tag>
          
         <tag>React-Router</tag>
-         
-         
-           
-             
-              <breadCrumb title="术业专攻" url="http://chanh.site/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chanh.site/2015/07/14/salesperson/</loc>
-    <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-    <data>
-        <display>
-        <title>销售员专用（hybrid app）混合应用</title>
-        <pubTime>2015-07-14T08:25:12.000Z</pubTime>
-        
-        <tag>hybrid</tag>
-         
-        <tag>nodejs</tag>
-         
-        <tag>angularJs</tag>
-         
-        <tag>cordova</tag>
-         
-        <tag>mongoDB</tag>
          
          
            

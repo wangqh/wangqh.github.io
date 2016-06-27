@@ -37,41 +37,6 @@
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/hybrid/</loc>
-        <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.site/tags/nodejs/</loc>
-        <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.site/tags/angularJs/</loc>
-        <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.site/tags/cordova/</loc>
-        <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.site/tags/mongoDB/</loc>
-        <lastmod>2016-06-02T09:39:51.903Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://chanh.site/tags/React/</loc>
         <lastmod>2016-06-02T09:44:57.025Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -116,6 +81,55 @@
     <url>
         <loc>http://chanh.site/tags/ellipsis/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/hybrid/</loc>
+        <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/nodejs/</loc>
+        <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/angularJs/</loc>
+        <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/cordova/</loc>
+        <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/mongoDB/</loc>
+        <lastmod>2016-06-27T05:39:46.655Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/%E7%AE%80%E7%BA%A6/</loc>
+        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.site/tags/%E4%BA%A4%E4%BA%92/</loc>
+        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

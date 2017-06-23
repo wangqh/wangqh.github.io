@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[浅析《简约至上：交互式设计四策略》]]></title>
-      <url>http://chanh.site/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</url>
+      <url>http://chanh.xyz/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</url>
       <content type="html"><![CDATA[<p>本书作者 Giles Colborne 曾任职于英国航空公司，英国物理学会出版社和灵智集团，二十多年潜心钻研交互式设计与易用性，颇有建树…<br>个人认为，无论是广告设计、室内设计、架构设计或是产品设计等等，设计方法和技巧都是相通的。因为都是针对特定人群而设计的，或者说都有自己的用户，且与用户之间都有交互。<br><a id="more"></a><br>本书主要分为两部分，第一部分：前两章主要介绍“什么是简约？”，“用户分为几种？”，“设计初期的准备与技巧”。第二部分：后面章节主要讲述交互设计的四策略：删除，组织，隐藏，转移。下面按两部分来分析一下作者的设计思想。</p>
 <h2 id="明确认识简约设计"><a href="#明确认识简约设计" class="headerlink" title="明确认识简约设计"></a>明确认识简约设计</h2><p>这部分主要介绍简约的概念及如何理解简约设计，还有一些设计基本技巧。</p>
 <h3 id="什么样的设计是简约设计？"><a href="#什么样的设计是简约设计？" class="headerlink" title="什么样的设计是简约设计？"></a>什么样的设计是简约设计？</h3><p>让用户感觉简单才是真正的简单，而不是管理员或工程师的感觉。<br>简单的用户体验是初学者、新手或是压力下的主流用户的体验。<br>简单是让用户感觉自己在掌控一切，他们不想让产品告诉自己该做什么。</p>
@@ -86,7 +86,7 @@
 </ul>
 </blockquote>
 <h4 id="避免错删"><a href="#避免错删" class="headerlink" title="避免错删"></a>避免错删</h4><p>一些难做且重要的功能，如果有人强烈反对，得到的答复一般都是 会在“第二阶段”“第三阶段”实现。<br>结果得到一个由简单功能叠加起来的产品，与市场上现有的平庸货别无二致。<br>总结：不能删掉可以增强用户体验且有价值的功能。</p>
-<h4 id="增加价值始于核心体"><a href="#增加价值始于核心体" class="headerlink" title="增加价值始于核心体"></a>增加价值始于核心体</h4><blockquote>
+<h4 id="增加价值始于核心体验"><a href="#增加价值始于核心体验" class="headerlink" title="增加价值始于核心体验"></a>增加价值始于核心体验</h4><blockquote>
 <p>与新增功能相比，客户更关注基本功能的改进。</p>
 </blockquote>
 <p>要想增强体验，首先不是想着增加新功能，而要看看现有功能是否可以再优化。</p>
@@ -181,7 +181,7 @@
     
     <entry>
       <title><![CDATA[css 强制换行及强制不换行]]></title>
-      <url>http://chanh.site/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/</url>
+      <url>http://chanh.xyz/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/</url>
       <content type="html"><![CDATA[<p>默认情况下，元素都有默认的 CSS 属性 white-space:normal（自动换行；ps: 不换行是 nowrap），当内容文字超过所定宽度时会自动换行；但如果其内的文字是堆没有空格的字符（正常情况不会出现这样的字符，但有些BT的测试人员就喜欢这样！），就会溢出容器或者把容器撑大，只有遇到空格时才换行。<br><a id="more"></a></p>
 <h2 id="常见解决方案"><a href="#常见解决方案" class="headerlink" title="常见解决方案"></a>常见解决方案</h2><p>主要分两种情况，一是允许切断单词（暴力）换行<code>word-break</code>，二是以单词（单词超过一行时自动换行）为单位换行<code>word-wrap</code>。以IE，Chrome，FF为测试浏览器。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">word-break</span>: break-all; <span class="comment">/* 支持IE，Chrome，低版FF不支持 */</span></span><br><span class="line">  <span class="attribute">word-wrap</span>: break-word; <span class="comment">/* 支持IE，Chrome，FF */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ol>
@@ -203,7 +203,7 @@
     
     <entry>
       <title><![CDATA[一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目]]></title>
-      <url>http://chanh.site/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
+      <url>http://chanh.xyz/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/</url>
       <content type="html"><![CDATA[<p>此项目基于 <a href="https://github.com/gulpjs/gulp" target="_blank" rel="external">gulp</a>, <a href="https://github.com/less/" target="_blank" rel="external">less</a> 和 <a href="https://github.com/webpack/webpack" target="_blank" rel="external">webpack</a>构建. View 层用 <a href="https://github.com/facebook/react" target="_blank" rel="external">React</a> 实现, 内部数据流使用  <a href="https://github.com/spoike/refluxjs" target="_blank" rel="external">Reflux</a>架构； 路由管理使用 <a href="https://github.com/rackt/react-router" target="_blank" rel="external">React-Router</a>.<br><a id="more"></a></p>
 <h2 id="Reflux-架构"><a href="#Reflux-架构" class="headerlink" title="Reflux 架构"></a>Reflux 架构</h2><p>一个单向数据流架构，其中包含三个重要组成部分：Actions, Stores, Components (View)<br>详细参考第三方<a href="https://segmentfault.com/a/1190000002793786" target="_blank" rel="external">中文版API</a><br><img src="/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/reflux.png" alt="[Reflux架构]" title="[Reflux架构]"></p>
 <h2 id="项目文件目录"><a href="#项目文件目录" class="headerlink" title="项目文件目录"></a>项目文件目录</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── dist    <span class="comment">// build目录</span></span><br><span class="line">│  ├── css</span><br><span class="line">│  ├── fonts</span><br><span class="line">│  ├── js</span><br><span class="line">│  └── index<span class="selector-class">.html</span></span><br><span class="line">└── src     <span class="comment">// 源文件目录</span></span><br><span class="line">    ├── images    <span class="comment">// 图片目录</span></span><br><span class="line">    ├── less    <span class="comment">// less 文件目录</span></span><br><span class="line">    ├── scripts     <span class="comment">// js 源码</span></span><br><span class="line">    │   ├── app     <span class="comment">// 与 routes 对应的 smart components （智能组件）</span></span><br><span class="line">    │   │   ├── activity    <span class="comment">// 活动页面的 actions stores view</span></span><br><span class="line">    │   │   │   ├── api     <span class="comment">// ajax 请求</span></span><br><span class="line">    │   │   │   ├── components    <span class="comment">// 活动相关组件 view</span></span><br><span class="line">    │   │   │   ├── stores    <span class="comment">// 活动页面的数据模型层</span></span><br><span class="line">    │   │   │   └── actions<span class="selector-class">.js</span>    <span class="comment">// 活动页面的动作交互</span></span><br><span class="line">    │   │   ├── error     <span class="comment">// 404, 403 UI</span></span><br><span class="line">    │   │   ├── event     <span class="comment">// 事件页面的 actions stores view （与活动类同）</span></span><br><span class="line">    │   │   ├── login     <span class="comment">// 登录页面UI</span></span><br><span class="line">    │   │   └── app<span class="selector-class">.jsx</span>     <span class="comment">// layout UI</span></span><br><span class="line">    │   ├── components    <span class="comment">// 通用木偶(Dumb)组件</span></span><br><span class="line">    │   ├── utils     <span class="comment">// auth 服务，常用工具类</span></span><br><span class="line">    │   ├── config<span class="selector-class">.js</span>     <span class="comment">// 常量配置</span></span><br><span class="line">    │   ├── main<span class="selector-class">.js</span>     <span class="comment">// 把 router 组件绑定到 html</span></span><br><span class="line">    │   └── routes<span class="selector-class">.js</span>     <span class="comment">// 路由配置</span></span><br><span class="line">    └── index.html</span><br></pre></td></tr></table></figure>
@@ -233,7 +233,7 @@
     
     <entry>
       <title><![CDATA[设置 GitHub SSH Keys]]></title>
-      <url>http://chanh.site/2016/06/01/settingsSSHKeysOfGitHub/</url>
+      <url>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</url>
       <content type="html"><![CDATA[<p>让本地git项目与远程的github建立联系，需要设置SSH keys。<br><a id="more"></a></p>
 <h2 id="检查-SSH-keys-的设置"><a href="#检查-SSH-keys-的设置" class="headerlink" title="检查 SSH keys 的设置"></a>检查 SSH keys 的设置</h2><p>首先我们需要检查电脑上现有的 ssh key:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh <span class="comment">#检查本机的ssh密钥</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -299,7 +299,7 @@ $ git config --global user.email  &quot;emailName@gmail.com&quot;//填写自己�
     
     <entry>
       <title><![CDATA[用hexo在GitHub上写博客]]></title>
-      <url>http://chanh.site/2016/05/27/%E7%94%A8hexo%E5%9C%A8GitHub%E4%B8%8A%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
+      <url>http://chanh.xyz/2016/05/27/%E7%94%A8hexo%E5%9C%A8GitHub%E4%B8%8A%E5%86%99%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>hexo出自台湾大学生 <a href="http://twitter.com/tommy351" target="_blank" rel="external">tommy351</a> 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br><a id="more"></a></p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
 <li>安装NodeJS</li>
@@ -354,7 +354,7 @@ $ git config --global user.email  &quot;emailName@gmail.com&quot;//填写自己�
     
     <entry>
       <title><![CDATA[销售员专用（hybrid app）混合应用]]></title>
-      <url>http://chanh.site/2015/07/14/salesperson/</url>
+      <url>http://chanh.xyz/2015/07/14/salesperson/</url>
       <content type="html"><![CDATA[<p>一个移动端（hybrid app）混合应用，销售员通过域帐号认证登录，查看从 AP 系统推送过来的信息，一键拨打客户电话并且确认是否跟踪订单。<br><a id="more"></a></p>
 <h2 id="用到的技术"><a href="#用到的技术" class="headerlink" title="用到的技术"></a>用到的技术</h2><table>
 <thead>

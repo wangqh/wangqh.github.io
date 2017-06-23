@@ -4,9 +4,9 @@
   <subtitle>码农，程序猿，JSer</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://chanh.site/"/>
-  <updated>2016-06-27T05:39:46.656Z</updated>
-  <id>http://chanh.site/</id>
+  <link href="http://chanh.xyz/"/>
+  <updated>2016-06-27T09:53:58.392Z</updated>
+  <id>http://chanh.xyz/</id>
   
   <author>
     <name>Chanh Wang</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>浅析《简约至上：交互式设计四策略》</title>
-    <link href="http://chanh.site/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/"/>
-    <id>http://chanh.site/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</id>
+    <link href="http://chanh.xyz/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/"/>
+    <id>http://chanh.xyz/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</id>
     <published>2016-06-25T01:34:39.000Z</published>
-    <updated>2016-06-27T05:39:46.656Z</updated>
+    <updated>2016-06-27T09:53:58.392Z</updated>
     
     <content type="html">&lt;p&gt;本书作者 Giles Colborne 曾任职于英国航空公司，英国物理学会出版社和灵智集团，二十多年潜心钻研交互式设计与易用性，颇有建树…&lt;br&gt;个人认为，无论是广告设计、室内设计、架构设计或是产品设计等等，设计方法和技巧都是相通的。因为都是针对特定人群而设计的，或者说都有自己的用户，且与用户之间都有交互。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;本书主要分为两部分，第一部分：前两章主要介绍“什么是简约？”，“用户分为几种？”，“设计初期的准备与技巧”。第二部分：后面章节主要讲述交互设计的四策略：删除，组织，隐藏，转移。下面按两部分来分析一下作者的设计思想。&lt;/p&gt;
 &lt;h2 id=&quot;明确认识简约设计&quot;&gt;&lt;a href=&quot;#明确认识简约设计&quot; class=&quot;headerlink&quot; title=&quot;明确认识简约设计&quot;&gt;&lt;/a&gt;明确认识简约设计&lt;/h2&gt;&lt;p&gt;这部分主要介绍简约的概念及如何理解简约设计，还有一些设计基本技巧。&lt;/p&gt;
@@ -102,7 +102,7 @@
 &lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&quot;避免错删&quot;&gt;&lt;a href=&quot;#避免错删&quot; class=&quot;headerlink&quot; title=&quot;避免错删&quot;&gt;&lt;/a&gt;避免错删&lt;/h4&gt;&lt;p&gt;一些难做且重要的功能，如果有人强烈反对，得到的答复一般都是 会在“第二阶段”“第三阶段”实现。&lt;br&gt;结果得到一个由简单功能叠加起来的产品，与市场上现有的平庸货别无二致。&lt;br&gt;总结：不能删掉可以增强用户体验且有价值的功能。&lt;/p&gt;
-&lt;h4 id=&quot;增加价值始于核心体&quot;&gt;&lt;a href=&quot;#增加价值始于核心体&quot; class=&quot;headerlink&quot; title=&quot;增加价值始于核心体&quot;&gt;&lt;/a&gt;增加价值始于核心体&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h4 id=&quot;增加价值始于核心体验&quot;&gt;&lt;a href=&quot;#增加价值始于核心体验&quot; class=&quot;headerlink&quot; title=&quot;增加价值始于核心体验&quot;&gt;&lt;/a&gt;增加价值始于核心体验&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;与新增功能相比，客户更关注基本功能的改进。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;要想增强体验，首先不是想着增加新功能，而要看看现有功能是否可以再优化。&lt;/p&gt;
@@ -200,19 +200,19 @@
     
     </summary>
     
-      <category term="自用笔记" scheme="http://chanh.site/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+      <category term="自用笔记" scheme="http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="简约" scheme="http://chanh.site/tags/%E7%AE%80%E7%BA%A6/"/>
+      <category term="简约" scheme="http://chanh.xyz/tags/%E7%AE%80%E7%BA%A6/"/>
     
-      <category term="交互" scheme="http://chanh.site/tags/%E4%BA%A4%E4%BA%92/"/>
+      <category term="交互" scheme="http://chanh.xyz/tags/%E4%BA%A4%E4%BA%92/"/>
     
   </entry>
   
   <entry>
     <title>css 强制换行及强制不换行</title>
-    <link href="http://chanh.site/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/"/>
-    <id>http://chanh.site/2016/06/08/css-强制换行/</id>
+    <link href="http://chanh.xyz/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/"/>
+    <id>http://chanh.xyz/2016/06/08/css-强制换行/</id>
     <published>2016-06-08T07:58:15.000Z</published>
     <updated>2016-06-08T09:46:03.292Z</updated>
     
@@ -240,23 +240,23 @@
     
     </summary>
     
-      <category term="自用笔记" scheme="http://chanh.site/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+      <category term="自用笔记" scheme="http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="word-break" scheme="http://chanh.site/tags/word-break/"/>
+      <category term="word-break" scheme="http://chanh.xyz/tags/word-break/"/>
     
-      <category term="word-wrap" scheme="http://chanh.site/tags/word-wrap/"/>
+      <category term="word-wrap" scheme="http://chanh.xyz/tags/word-wrap/"/>
     
-      <category term="white-space" scheme="http://chanh.site/tags/white-space/"/>
+      <category term="white-space" scheme="http://chanh.xyz/tags/white-space/"/>
     
-      <category term="ellipsis" scheme="http://chanh.site/tags/ellipsis/"/>
+      <category term="ellipsis" scheme="http://chanh.xyz/tags/ellipsis/"/>
     
   </entry>
   
   <entry>
     <title>一个基于React+Reflux+Webpack+Gulp+Less+React-Router的项目</title>
-    <link href="http://chanh.site/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://chanh.site/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/</id>
+    <link href="http://chanh.xyz/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://chanh.xyz/2016/06/02/一个基于React-Reflux-Webpack-Gulp-Less-React-Router的项目/</id>
     <published>2016-06-02T09:30:31.000Z</published>
     <updated>2016-06-02T09:44:57.025Z</updated>
     
@@ -292,21 +292,21 @@
     
     </summary>
     
-      <category term="术业专攻" scheme="http://chanh.site/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+      <category term="术业专攻" scheme="http://chanh.xyz/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="React" scheme="http://chanh.site/tags/React/"/>
+      <category term="React" scheme="http://chanh.xyz/tags/React/"/>
     
-      <category term="Reflux" scheme="http://chanh.site/tags/Reflux/"/>
+      <category term="Reflux" scheme="http://chanh.xyz/tags/Reflux/"/>
     
-      <category term="React-Router" scheme="http://chanh.site/tags/React-Router/"/>
+      <category term="React-Router" scheme="http://chanh.xyz/tags/React-Router/"/>
     
   </entry>
   
   <entry>
     <title>设置 GitHub SSH Keys</title>
-    <link href="http://chanh.site/2016/06/01/settingsSSHKeysOfGitHub/"/>
-    <id>http://chanh.site/2016/06/01/settingsSSHKeysOfGitHub/</id>
+    <link href="http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/"/>
+    <id>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</id>
     <published>2016-06-01T03:40:45.000Z</published>
     <updated>2016-06-01T07:43:28.229Z</updated>
     
@@ -378,19 +378,19 @@ $ git config --global user.email  &amp;quot;emailName@gmail.com&amp;quot;//填�
     
     </summary>
     
-      <category term="自用笔记" scheme="http://chanh.site/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+      <category term="自用笔记" scheme="http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="SSHKey" scheme="http://chanh.site/tags/SSHKey/"/>
+      <category term="SSHKey" scheme="http://chanh.xyz/tags/SSHKey/"/>
     
-      <category term="GitHub" scheme="http://chanh.site/tags/GitHub/"/>
+      <category term="GitHub" scheme="http://chanh.xyz/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>用hexo在GitHub上写博客</title>
-    <link href="http://chanh.site/2016/05/27/%E7%94%A8hexo%E5%9C%A8GitHub%E4%B8%8A%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://chanh.site/2016/05/27/用hexo在GitHub上写博客/</id>
+    <link href="http://chanh.xyz/2016/05/27/%E7%94%A8hexo%E5%9C%A8GitHub%E4%B8%8A%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://chanh.xyz/2016/05/27/用hexo在GitHub上写博客/</id>
     <published>2016-05-27T06:11:07.000Z</published>
     <updated>2016-05-30T09:34:58.614Z</updated>
     
@@ -451,23 +451,23 @@ $ git config --global user.email  &amp;quot;emailName@gmail.com&amp;quot;//填�
     
     </summary>
     
-      <category term="触类旁通" scheme="http://chanh.site/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/"/>
+      <category term="触类旁通" scheme="http://chanh.xyz/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/"/>
     
     
-      <category term="nodejs" scheme="http://chanh.site/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://chanh.xyz/tags/nodejs/"/>
     
-      <category term="git" scheme="http://chanh.site/tags/git/"/>
+      <category term="git" scheme="http://chanh.xyz/tags/git/"/>
     
-      <category term="hexo" scheme="http://chanh.site/tags/hexo/"/>
+      <category term="hexo" scheme="http://chanh.xyz/tags/hexo/"/>
     
-      <category term="blog" scheme="http://chanh.site/tags/blog/"/>
+      <category term="blog" scheme="http://chanh.xyz/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>销售员专用（hybrid app）混合应用</title>
-    <link href="http://chanh.site/2015/07/14/salesperson/"/>
-    <id>http://chanh.site/2015/07/14/salesperson/</id>
+    <link href="http://chanh.xyz/2015/07/14/salesperson/"/>
+    <id>http://chanh.xyz/2015/07/14/salesperson/</id>
     <published>2015-07-14T08:25:12.000Z</published>
     <updated>2016-06-27T05:39:46.655Z</updated>
     
@@ -552,18 +552,18 @@ $ git config --global user.email  &amp;quot;emailName@gmail.com&amp;quot;//填�
     
     </summary>
     
-      <category term="术业专攻" scheme="http://chanh.site/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
+      <category term="术业专攻" scheme="http://chanh.xyz/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
     
     
-      <category term="hybrid" scheme="http://chanh.site/tags/hybrid/"/>
+      <category term="hybrid" scheme="http://chanh.xyz/tags/hybrid/"/>
     
-      <category term="nodejs" scheme="http://chanh.site/tags/nodejs/"/>
+      <category term="nodejs" scheme="http://chanh.xyz/tags/nodejs/"/>
     
-      <category term="angularJs" scheme="http://chanh.site/tags/angularJs/"/>
+      <category term="angularJs" scheme="http://chanh.xyz/tags/angularJs/"/>
     
-      <category term="cordova" scheme="http://chanh.site/tags/cordova/"/>
+      <category term="cordova" scheme="http://chanh.xyz/tags/cordova/"/>
     
-      <category term="mongoDB" scheme="http://chanh.site/tags/mongoDB/"/>
+      <category term="mongoDB" scheme="http://chanh.xyz/tags/mongoDB/"/>
     
   </entry>
   

@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://chanh.site/post-sitemap.xml</loc>
-        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+        <loc>http://chanh.xyz/post-sitemap.xml</loc>
+        <lastmod>2016-06-27T09:53:58.392Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://chanh.site/page-sitemap.xml</loc>
+        <loc>http://chanh.xyz/page-sitemap.xml</loc>
         <lastmod>2016-05-31T06:22:03.712Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://chanh.site/category-sitemap.xml</loc>
+        <loc>http://chanh.xyz/category-sitemap.xml</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://chanh.site/tag-sitemap.xml</loc>
+        <loc>http://chanh.xyz/tag-sitemap.xml</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
     </sitemap>
 

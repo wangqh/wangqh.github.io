@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://chanh.site</loc>
+        <loc>http://chanh.xyz</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/</loc>
+        <loc>http://chanh.xyz/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/</loc>
+        <loc>http://chanh.xyz/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
-        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+        <loc>http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+        <lastmod>2016-06-27T09:53:58.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

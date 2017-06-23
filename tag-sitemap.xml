@@ -2,134 +2,134 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://chanh.site/tags/git/</loc>
+        <loc>http://chanh.xyz/tags/git/</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/hexo/</loc>
+        <loc>http://chanh.xyz/tags/hexo/</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/blog/</loc>
+        <loc>http://chanh.xyz/tags/blog/</loc>
         <lastmod>2016-05-30T09:34:58.614Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/SSHKey/</loc>
+        <loc>http://chanh.xyz/tags/SSHKey/</loc>
         <lastmod>2016-06-01T07:43:28.229Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/GitHub/</loc>
+        <loc>http://chanh.xyz/tags/GitHub/</loc>
         <lastmod>2016-06-01T07:43:28.229Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/React/</loc>
+        <loc>http://chanh.xyz/tags/React/</loc>
         <lastmod>2016-06-02T09:44:57.025Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/Reflux/</loc>
+        <loc>http://chanh.xyz/tags/Reflux/</loc>
         <lastmod>2016-06-02T09:44:57.025Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/React-Router/</loc>
+        <loc>http://chanh.xyz/tags/React-Router/</loc>
         <lastmod>2016-06-02T09:44:57.025Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/word-break/</loc>
+        <loc>http://chanh.xyz/tags/word-break/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/word-wrap/</loc>
+        <loc>http://chanh.xyz/tags/word-wrap/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/white-space/</loc>
+        <loc>http://chanh.xyz/tags/white-space/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/ellipsis/</loc>
+        <loc>http://chanh.xyz/tags/ellipsis/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/hybrid/</loc>
+        <loc>http://chanh.xyz/tags/hybrid/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/nodejs/</loc>
+        <loc>http://chanh.xyz/tags/nodejs/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/angularJs/</loc>
+        <loc>http://chanh.xyz/tags/angularJs/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/cordova/</loc>
+        <loc>http://chanh.xyz/tags/cordova/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/mongoDB/</loc>
+        <loc>http://chanh.xyz/tags/mongoDB/</loc>
         <lastmod>2016-06-27T05:39:46.655Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/%E7%AE%80%E7%BA%A6/</loc>
-        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+        <loc>http://chanh.xyz/tags/%E7%AE%80%E7%BA%A6/</loc>
+        <lastmod>2016-06-27T09:53:58.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://chanh.site/tags/%E4%BA%A4%E4%BA%92/</loc>
-        <lastmod>2016-06-27T05:39:46.656Z</lastmod>
+        <loc>http://chanh.xyz/tags/%E4%BA%A4%E4%BA%92/</loc>
+        <lastmod>2016-06-27T09:53:58.392Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

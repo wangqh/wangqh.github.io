@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://chanh.site</loc>
+        <loc>http://chanh.xyz</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>http://chanh.site/404.html</loc>
+        <loc>http://chanh.xyz/404.html</loc>
         <lastmod>2016-05-31T06:22:03.712Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://chanh.site/about/index.html</loc>
+        <loc>http://chanh.xyz/about/index.html</loc>
         <lastmod>2016-05-30T05:58:21.118Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

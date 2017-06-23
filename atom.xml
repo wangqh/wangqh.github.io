@@ -308,12 +308,12 @@
     <link href="http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/"/>
     <id>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</id>
     <published>2016-06-01T03:40:45.000Z</published>
-    <updated>2016-06-01T07:43:28.229Z</updated>
+    <updated>2017-06-23T07:19:11.007Z</updated>
     
     <content type="html">&lt;p&gt;让本地git项目与远程的github建立联系，需要设置SSH keys。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;检查-SSH-keys-的设置&quot;&gt;&lt;a href=&quot;#检查-SSH-keys-的设置&quot; class=&quot;headerlink&quot; title=&quot;检查 SSH keys 的设置&quot;&gt;&lt;/a&gt;检查 SSH keys 的设置&lt;/h2&gt;&lt;p&gt;首先我们需要检查电脑上现有的 ssh key:&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~/.ssh &lt;span class=&quot;comment&quot;&gt;#检查本机的ssh密钥&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;如果提示：No such file or directory 说你机器上存在旧的 SSH key&lt;/p&gt;
+&lt;p&gt;如果提示：No such file or directory 说明你机器上不存在旧的 SSH key&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;生成新的-SSH-Key&quot;&gt;&lt;a href=&quot;#生成新的-SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;生成新的 SSH Key:&quot;&gt;&lt;/a&gt;生成新的 SSH Key:&lt;/h2&gt;&lt;p&gt;首先用 ssh-keygen 生成一个密钥&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;邮箱名@youremail.com&amp;quot;
@@ -350,7 +350,7 @@ Agent pid 59566
 &lt;/ol&gt;
 &lt;h2 id=&quot;添加-SSH-Key-到-GitHub-账号&quot;&gt;&lt;a href=&quot;#添加-SSH-Key-到-GitHub-账号&quot; class=&quot;headerlink&quot; title=&quot;添加 SSH Key 到 GitHub 账号&quot;&gt;&lt;/a&gt;添加 SSH Key 到 GitHub 账号&lt;/h2&gt;&lt;p&gt;在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH连接接的设置。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;打开本地 C:\Documents and Settings\your_user_directory.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。&lt;/li&gt;
+&lt;li&gt;打开本地 C:\Documents and Settings\your_user_directory.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。&lt;/li&gt;
 &lt;li&gt;登陆github系统。点击右上角的 Settings ??&amp;gt; SSH and GPG keys ??&amp;gt; New SSH key&lt;/li&gt;
 &lt;li&gt;把你本地生成的密钥复制到里面（key文本框中），Title 可写中文标题，以区分其它绑定的机器， 点击 add SSH key 就 ok 了&lt;/li&gt;
 &lt;/ol&gt;

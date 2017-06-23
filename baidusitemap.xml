@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</loc>
+    <lastmod>2017-06-23T07:19:11.007Z</lastmod>
+    <data>
+        <display>
+        <title>设置 GitHub SSH Keys</title>
+        <pubTime>2016-06-01T03:40:45.000Z</pubTime>
+        
+        <tag>SSHKey</tag>
+         
+        <tag>GitHub</tag>
+         
+         
+           
+             
+              <breadCrumb title="自用笔记" url="http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chanh.xyz/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</loc>
     <lastmod>2016-06-27T09:53:58.392Z</lastmod>
     <data>
@@ -97,28 +119,6 @@
            
              
               <breadCrumb title="术业专攻" url="http://chanh.xyz/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</loc>
-    <lastmod>2016-06-01T07:43:28.229Z</lastmod>
-    <data>
-        <display>
-        <title>设置 GitHub SSH Keys</title>
-        <pubTime>2016-06-01T03:40:45.000Z</pubTime>
-        
-        <tag>SSHKey</tag>
-         
-        <tag>GitHub</tag>
-         
-         
-           
-             
-              <breadCrumb title="自用笔记" url="http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
           
         </display>
     </data>

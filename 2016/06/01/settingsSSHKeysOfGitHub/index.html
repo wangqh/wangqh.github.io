@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/index.html">
 <meta property="og:site_name" content="Chanh's Blog">
 <meta property="og:description" content="让本地git项目与远程的github建立联系，需要设置SSH keys。">
-<meta property="og:updated_time" content="2016-06-01T07:43:28.229Z">
+<meta property="og:updated_time" content="2017-06-23T07:19:11.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设置 GitHub SSH Keys">
 <meta name="twitter:description" content="让本地git项目与远程的github建立联系，需要设置SSH keys。">
@@ -306,7 +306,7 @@
         <p>让本地git项目与远程的github建立联系，需要设置SSH keys。<br><a id="more"></a></p>
 <h2 id="检查-SSH-keys-的设置"><a href="#检查-SSH-keys-的设置" class="headerlink" title="检查 SSH keys 的设置"></a>检查 SSH keys 的设置</h2><p>首先我们需要检查电脑上现有的 ssh key:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh <span class="comment">#检查本机的ssh密钥</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>如果提示：No such file or directory 说你机器上存在旧的 SSH key</p>
+<p>如果提示：No such file or directory 说明你机器上不存在旧的 SSH key</p>
 </blockquote>
 <h2 id="生成新的-SSH-Key"><a href="#生成新的-SSH-Key" class="headerlink" title="生成新的 SSH Key:"></a>生成新的 SSH Key:</h2><p>首先用 ssh-keygen 生成一个密钥</p>
 <pre><code>$ ssh-keygen -t rsa -C &quot;邮箱名@youremail.com&quot;
@@ -343,7 +343,7 @@ Agent pid 59566
 </ol>
 <h2 id="添加-SSH-Key-到-GitHub-账号"><a href="#添加-SSH-Key-到-GitHub-账号" class="headerlink" title="添加 SSH Key 到 GitHub 账号"></a>添加 SSH Key 到 GitHub 账号</h2><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH连接接的设置。</p>
 <ol>
-<li>打开本地 C:\Documents and Settings\your_user_directory.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>打开本地 C:\Documents and Settings\your_user_directory.ssh\id_rsa.pub 文件。此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
 <li>登陆github系统。点击右上角的 Settings ??&gt; SSH and GPG keys ??&gt; New SSH key</li>
 <li>把你本地生成的密钥复制到里面（key文本框中），Title 可写中文标题，以区分其它绑定的机器， 点击 add SSH key 就 ok 了</li>
 </ol>
@@ -374,7 +374,7 @@ $ git config --global user.email  &quot;emailName@gmail.com&quot;//填写自己�
         <p><span>本文标题:</span><a href="/2016/06/01/settingsSSHKeysOfGitHub/">设置 GitHub SSH Keys</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Chanh Wang</a></p>
         <p><span>发布时间:</span>2016-06-01, 11:40:45</p>
-        <p><span>最后更新:</span>2016-06-01, 15:43:28</p>
+        <p><span>最后更新:</span>2017-06-23, 15:19:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/01/settingsSSHKeysOfGitHub/" title="设置 GitHub SSH Keys">http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</a>
             <span class="copy-path" data-clipboard-text="原文: http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/　　作者: Chanh Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

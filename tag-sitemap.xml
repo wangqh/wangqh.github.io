@@ -23,27 +23,6 @@
     </url>
 
     <url>
-        <loc>http://chanh.xyz/tags/React/</loc>
-        <lastmod>2016-06-02T09:44:57.025Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.xyz/tags/Reflux/</loc>
-        <lastmod>2016-06-02T09:44:57.025Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://chanh.xyz/tags/React-Router/</loc>
-        <lastmod>2016-06-02T09:44:57.025Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://chanh.xyz/tags/word-break/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -130,6 +109,27 @@
     <url>
         <loc>http://chanh.xyz/tags/GitHub/</loc>
         <lastmod>2017-06-23T07:19:11.007Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.xyz/tags/React/</loc>
+        <lastmod>2017-06-23T09:24:09.106Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.xyz/tags/Reflux/</loc>
+        <lastmod>2017-06-23T09:24:09.106Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.xyz/tags/React-Router/</loc>
+        <lastmod>2017-06-23T09:24:09.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

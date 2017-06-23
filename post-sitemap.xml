@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://chanh.xyz/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/</loc>
+        <lastmod>2017-06-23T09:24:09.106Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://chanh.xyz/2016/06/01/settingsSSHKeysOfGitHub/</loc>
         <lastmod>2017-06-23T07:19:11.007Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +41,6 @@
     <url>
         <loc>http://chanh.xyz/2016/06/08/css-%E5%BC%BA%E5%88%B6%E6%8D%A2%E8%A1%8C/</loc>
         <lastmod>2016-06-08T09:46:03.292Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://chanh.xyz/2016/06/02/%E4%B8%80%E4%B8%AA%E5%9F%BA%E4%BA%8EReact-Reflux-Webpack-Gulp-Less-React-Router%E7%9A%84%E9%A1%B9%E7%9B%AE/</loc>
-        <lastmod>2016-06-02T09:44:57.025Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

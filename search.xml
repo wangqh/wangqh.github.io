@@ -210,7 +210,61 @@
 <blockquote>
 <p>智能(smart)组件：含有状态(state)控制的组件。<br>木偶(Dumb)组件：没有状态(state)控制的展示组件，通常是可复用的部分。</p>
 </blockquote>
-<h2 id="React-Router-路由配置"><a href="#React-Router-路由配置" class="headerlink" title="React Router 路由配置"></a>React Router 路由配置</h2><p>路由通常是一个单页应用的核心，用来控制不同视图间切换。监听 location 中 hash 的变化来实现不同 components 的展视。<br>此应用的 URLs 与 components 对照：<br>URL                               | Components<br>———————————-|———–<br><code>/</code>                               | <code>App</code><br><code>/activity</code>                       | <code>App -&gt; ActivityManage</code><br><code>/activity/add</code>                   | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/edit</code>      | <code>App -&gt; ActivityManage -&gt; ActivityAdd</code><br><code>/activity/:activityId/unit/add</code>  | <code>App -&gt; UnitAdd</code><br><code>/activity/unit/:unitId/edit</code>     | <code>App -&gt; UnitAdd</code><br><code>/activity/:id/detail</code>            | <code>App -&gt; ActivityDetail</code><br><code>/activity/unit/:id/detail</code>       | <code>App -&gt; UnitDetail</code><br><code>/event</code>                          | <code>App -&gt; EventManage</code><br><code>/accessdenied</code>                   | <code>App -&gt; AccessDenied</code><br><code>/*</code>                              | <code>App -&gt; NotFound</code></p>
+<h2 id="React-Router-路由配置"><a href="#React-Router-路由配置" class="headerlink" title="React Router 路由配置"></a>React Router 路由配置</h2><p>路由通常是一个单页应用的核心，用来控制不同视图间切换。监听 location 中 hash 的变化来实现不同 components 的展视。<br>此应用的 URLs 与 components 对照：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>App</code></td>
+</tr>
+<tr>
+<td><code>/activity</code></td>
+<td><code>App -&gt; ActivityManage</code></td>
+</tr>
+<tr>
+<td><code>/activity/add</code></td>
+<td><code>App -&gt; ActivityManage -&gt; ActivityAdd</code></td>
+</tr>
+<tr>
+<td><code>/activity/:activityId/edit</code></td>
+<td><code>App -&gt; ActivityManage -&gt; ActivityAdd</code></td>
+</tr>
+<tr>
+<td><code>/activity/:activityId/unit/add</code></td>
+<td><code>App -&gt; UnitAdd</code></td>
+</tr>
+<tr>
+<td><code>/activity/unit/:unitId/edit</code></td>
+<td><code>App -&gt; UnitAdd</code></td>
+</tr>
+<tr>
+<td><code>/activity/:id/detail</code></td>
+<td><code>App -&gt; ActivityDetail</code></td>
+</tr>
+<tr>
+<td><code>/activity/unit/:id/detail</code></td>
+<td><code>App -&gt; UnitDetail</code></td>
+</tr>
+<tr>
+<td><code>/event</code></td>
+<td><code>App -&gt; EventManage</code></td>
+</tr>
+<tr>
+<td><code>/accessdenied</code></td>
+<td><code>App -&gt; AccessDenied</code></td>
+</tr>
+<tr>
+<td><code>/*</code></td>
+<td><code>App -&gt; NotFound</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># src/scripts/routes.js</span><br><span class="line"></span><br><span class="line">import &#123; Router, Route, IndexRoute, IndexRedirect, useRouterHistory, hashHistory &#125; from 'react-router';</span><br><span class="line">import &#123; createHashHistory &#125; from 'history'</span><br><span class="line"></span><br><span class="line">const appHistory = useRouterHistory(createHashHistory)(&#123; queryKey: true &#125;);</span><br><span class="line"></span><br><span class="line">const routes = (</span><br><span class="line">  &lt;Router history=&#123;appHistory&#125;&gt;</span><br><span class="line">    &lt;Route path='/' component=&#123; App &#125; onEnter=&#123;onEnterApp&#125;&gt;</span><br><span class="line">      &lt;IndexRedirect to="activity" /&gt;</span><br><span class="line">      &lt;Route path='activity' component=&#123; ActivityManage &#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; &gt;</span><br><span class="line">        &lt;Route path='add' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">        &lt;Route path=':activityId/edit' component=&#123;ActivityAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125; /&gt;</span><br><span class="line">      &lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:activityId/unit/add" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:unitId/edit" component=&#123;UnitAdd&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/:id/detail" component=&#123;ActivityDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path="activity/unit/:id/detail" component=&#123;UnitDetail&#125; onEnter=&#123;requireAuth.bind(this, roles.activity)&#125;&gt;&lt;/Route&gt;</span><br><span class="line">      &lt;Route path='event' component=&#123; EventManage &#125; onEnter=&#123;requireAuth.bind(this, roles.event)&#125; /&gt;</span><br><span class="line">      &lt;Route path='accessdenied' component=&#123;AccessDenied&#125;/&gt;</span><br><span class="line">      &lt;Route path='*' component=&#123;NotFound&#125;/&gt;</span><br><span class="line">    &lt;/Route&gt;</span><br><span class="line">  &lt;/Router&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">function onEnterApp(nextState, replace, callback) &#123;</span><br><span class="line">  auth.authorize(null, callback);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function requireAuth(roles, nextState, replace, callback) &#123;</span><br><span class="line">  if(Principal.isIdentityResolved())&#123;</span><br><span class="line">    auth.authorize(roles, callback)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default routes;</span><br></pre></td></tr></table></figure>
 <h3 id="Router-的-history-属性"><a href="#Router-的-history-属性" class="headerlink" title="Router 的 history 属性"></a>Router 的 history 属性</h3><p>React Router 是基于history的。所以 history 是 Router 组件上主要的属性。这里的 History 有三种类型 browserHistory, hashHistory, createMemoryHistory。先简单介绍下这三种类型：</p>
 <ul>

@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>http://chanh.xyz/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/</loc>
-        <lastmod>2016-05-30T09:34:58.614Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://chanh.xyz/categories/%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
         <lastmod>2017-06-23T07:19:11.007Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,6 +16,13 @@
     <url>
         <loc>http://chanh.xyz/categories/%E6%9C%AF%E4%B8%9A%E4%B8%93%E6%94%BB/</loc>
         <lastmod>2017-06-23T09:24:09.106Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://chanh.xyz/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/</loc>
+        <lastmod>2017-07-21T06:27:26.756Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

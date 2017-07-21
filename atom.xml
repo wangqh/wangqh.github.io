@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chanh.xyz/"/>
-  <updated>2016-06-27T09:53:58.392Z</updated>
+  <updated>2017-07-21T06:27:26.756Z</updated>
   <id>http://chanh.xyz/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bidDog 使用说明</title>
+    <link href="http://chanh.xyz/2017/07/21/bidDogInstruction/"/>
+    <id>http://chanh.xyz/2017/07/21/bidDogInstruction/</id>
+    <published>2017-07-21T03:26:28.000Z</published>
+    <updated>2017-07-21T06:27:26.756Z</updated>
+    
+    <content type="html">&lt;p&gt;bidDog的详细使用说明: 使用前准备、安装bidDog、使用方法。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;使用前准备&quot;&gt;&lt;a href=&quot;#使用前准备&quot; class=&quot;headerlink&quot; title=&quot;使用前准备&quot;&gt;&lt;/a&gt;使用前准备&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;确保电脑上装有(谷歌)chrome浏览器【全球最快、用户最多的浏览器】；&lt;a href=&quot;https://www.google.cn/chrome/browser/desktop/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方下载链接&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;京东账号，没有请自行注册&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;安装步骤&quot;&gt;&lt;a href=&quot;#安装步骤&quot; class=&quot;headerlink&quot; title=&quot;安装步骤&quot;&gt;&lt;/a&gt;安装步骤&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开Chrome浏览器扩展程序界面，【右上角菜单】=&amp;gt;【更多工具】=&amp;gt;【扩展程序】；如下图(1)(2)：&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/open-extension.png&quot; alt=&quot;[打开扩展程序界面]&quot; title=&quot;[打开扩展程序界面]&quot;&gt;
+&lt;p&gt;图1&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/extension-page.png&quot; alt=&quot;[扩展程序界面]&quot; title=&quot;[扩展程序界面]&quot;&gt;
+&lt;p&gt;图2&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：另一种打开方式，直接在地址栏输入&lt;code&gt;chrome://extensions&lt;/code&gt;也可以打开此界面。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;拖动 bidDog.crx 文件到扩展程序界面进行安装，如下图：&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/drop-extension.png&quot; alt=&quot;[拖动扩展程序]&quot; title=&quot;[拖动扩展程序]&quot;&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;点击【添加扩展程序】以完成安装，如下图：&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/install-extension.png&quot; alt=&quot;[安装扩展程序]&quot; title=&quot;[安装扩展程序]&quot;&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/success-view.png&quot; alt=&quot;[成功安装]&quot; title=&quot;[成功安装]&quot;&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;打开&lt;a href=&quot;http://dbd.jd.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;京东夺宝岛&lt;/a&gt;登录京东账号，如下图：&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/login-site.png&quot; alt=&quot;[登录]&quot; title=&quot;[登录]&quot;&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;搜索并打开想要竞拍的商品页面，点击【bidDog】图标，输入竞拍【最高出价】，然后点击【开启竞拍】；如下图：&lt;/p&gt;
+&lt;img src=&quot;/2017/07/21/bidDogInstruction/use-extension.png&quot; alt=&quot;[使用方法]&quot; title=&quot;[使用方法]&quot;&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最高出价：能接受的最高价格，竞拍过程中不会超过此价格，一般设置为【封顶价】的6折左右成功机率较大，或者根据商品价值自行调整。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;个人经验：&lt;/strong&gt;根据目标商品以往的成交价格，设置合适的【最高出价】，能提高拍中的机率。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;bidDog的详细使用说明: 使用前准备、安装bidDog、使用方法。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="触类旁通" scheme="http://chanh.xyz/categories/%E8%A7%A6%E7%B1%BB%E6%97%81%E9%80%9A/"/>
+    
+    
+      <category term="bid" scheme="http://chanh.xyz/tags/bid/"/>
+    
+  </entry>
   
   <entry>
     <title>浅析《简约至上：交互式设计四策略》</title>

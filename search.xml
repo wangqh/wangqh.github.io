@@ -4,6 +4,47 @@
   
     
     <entry>
+      <title><![CDATA[bidDog 使用说明]]></title>
+      <url>http://chanh.xyz/2017/07/21/bidDogInstruction/</url>
+      <content type="html"><![CDATA[<p>bidDog的详细使用说明: 使用前准备、安装bidDog、使用方法。<br><a id="more"></a></p>
+<h2 id="使用前准备"><a href="#使用前准备" class="headerlink" title="使用前准备"></a>使用前准备</h2><ol>
+<li>确保电脑上装有(谷歌)chrome浏览器【全球最快、用户最多的浏览器】；<a href="https://www.google.cn/chrome/browser/desktop/index.html" target="_blank" rel="external">官方下载链接</a></li>
+<li>京东账号，没有请自行注册</li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
+<li><p>打开Chrome浏览器扩展程序界面，【右上角菜单】=&gt;【更多工具】=&gt;【扩展程序】；如下图(1)(2)：</p>
+<img src="/2017/07/21/bidDogInstruction/open-extension.png" alt="[打开扩展程序界面]" title="[打开扩展程序界面]">
+<p>图1</p>
+<img src="/2017/07/21/bidDogInstruction/extension-page.png" alt="[扩展程序界面]" title="[扩展程序界面]">
+<p>图2</p>
+<blockquote>
+<p>注：另一种打开方式，直接在地址栏输入<code>chrome://extensions</code>也可以打开此界面。</p>
+</blockquote>
+</li>
+<li><p>拖动 bidDog.crx 文件到扩展程序界面进行安装，如下图：</p>
+<img src="/2017/07/21/bidDogInstruction/drop-extension.png" alt="[拖动扩展程序]" title="[拖动扩展程序]">
+</li>
+<li><p>点击【添加扩展程序】以完成安装，如下图：</p>
+<img src="/2017/07/21/bidDogInstruction/install-extension.png" alt="[安装扩展程序]" title="[安装扩展程序]">
+<img src="/2017/07/21/bidDogInstruction/success-view.png" alt="[成功安装]" title="[成功安装]">
+</li>
+</ol>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol>
+<li><p>打开<a href="http://dbd.jd.com/" target="_blank" rel="external">京东夺宝岛</a>登录京东账号，如下图：</p>
+<img src="/2017/07/21/bidDogInstruction/login-site.png" alt="[登录]" title="[登录]">
+</li>
+<li><p>搜索并打开想要竞拍的商品页面，点击【bidDog】图标，输入竞拍【最高出价】，然后点击【开启竞拍】；如下图：</p>
+<img src="/2017/07/21/bidDogInstruction/use-extension.png" alt="[使用方法]" title="[使用方法]">
+</li>
+</ol>
+<blockquote>
+<p>最高出价：能接受的最高价格，竞拍过程中不会超过此价格，一般设置为【封顶价】的6折左右成功机率较大，或者根据商品价值自行调整。</p>
+</blockquote>
+<p><strong>个人经验：</strong>根据目标商品以往的成交价格，设置合适的【最高出价】，能提高拍中的机率。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[浅析《简约至上：交互式设计四策略》]]></title>
       <url>http://chanh.xyz/2016/06/25/simple-and-usable-web-mobile-and-interaction-design/</url>
       <content type="html"><![CDATA[<p>本书作者 Giles Colborne 曾任职于英国航空公司，英国物理学会出版社和灵智集团，二十多年潜心钻研交互式设计与易用性，颇有建树…<br>个人认为，无论是广告设计、室内设计、架构设计或是产品设计等等，设计方法和技巧都是相通的。因为都是针对特定人群而设计的，或者说都有自己的用户，且与用户之间都有交互。<br><a id="more"></a><br>本书主要分为两部分，第一部分：前两章主要介绍“什么是简约？”，“用户分为几种？”，“设计初期的准备与技巧”。第二部分：后面章节主要讲述交互设计的四策略：删除，组织，隐藏，转移。下面按两部分来分析一下作者的设计思想。</p>
